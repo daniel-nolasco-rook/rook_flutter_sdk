@@ -62,8 +62,6 @@ class SDKExceptionProto extends $pb.GeneratedMessage {
   static SDKExceptionProto create() => SDKExceptionProto._();
   @$core.override
   SDKExceptionProto createEmptyInstance() => create();
-  static $pb.PbList<SDKExceptionProto> createRepeated() =>
-      $pb.PbList<SDKExceptionProto>();
   @$core.pragma('dart2js:noInline')
   static SDKExceptionProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SDKExceptionProto>(create);
@@ -139,8 +137,6 @@ class BooleanResultProto extends $pb.GeneratedMessage {
   static BooleanResultProto create() => BooleanResultProto._();
   @$core.override
   BooleanResultProto createEmptyInstance() => create();
-  static $pb.PbList<BooleanResultProto> createRepeated() =>
-      $pb.PbList<BooleanResultProto>();
   @$core.pragma('dart2js:noInline')
   static BooleanResultProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<BooleanResultProto>(create);
@@ -222,8 +218,6 @@ class Int64ResultProto extends $pb.GeneratedMessage {
   static Int64ResultProto create() => Int64ResultProto._();
   @$core.override
   Int64ResultProto createEmptyInstance() => create();
-  static $pb.PbList<Int64ResultProto> createRepeated() =>
-      $pb.PbList<Int64ResultProto>();
   @$core.pragma('dart2js:noInline')
   static Int64ResultProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<Int64ResultProto>(create);
@@ -310,8 +304,6 @@ class ConfigurationProto extends $pb.GeneratedMessage {
   static ConfigurationProto create() => ConfigurationProto._();
   @$core.override
   ConfigurationProto createEmptyInstance() => create();
-  static $pb.PbList<ConfigurationProto> createRepeated() =>
-      $pb.PbList<ConfigurationProto>();
   @$core.pragma('dart2js:noInline')
   static ConfigurationProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ConfigurationProto>(create);
@@ -406,8 +398,6 @@ class DiagnosticSyncStateProto extends $pb.GeneratedMessage {
   static DiagnosticSyncStateProto create() => DiagnosticSyncStateProto._();
   @$core.override
   DiagnosticSyncStateProto createEmptyInstance() => create();
-  static $pb.PbList<DiagnosticSyncStateProto> createRepeated() =>
-      $pb.PbList<DiagnosticSyncStateProto>();
   @$core.pragma('dart2js:noInline')
   static DiagnosticSyncStateProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DiagnosticSyncStateProto>(create);
@@ -491,8 +481,6 @@ class DiagnosticStateProto extends $pb.GeneratedMessage {
   static DiagnosticStateProto create() => DiagnosticStateProto._();
   @$core.override
   DiagnosticStateProto createEmptyInstance() => create();
-  static $pb.PbList<DiagnosticStateProto> createRepeated() =>
-      $pb.PbList<DiagnosticStateProto>();
   @$core.pragma('dart2js:noInline')
   static DiagnosticStateProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DiagnosticStateProto>(create);
@@ -604,8 +592,6 @@ class DiagnosticStateResultProto extends $pb.GeneratedMessage {
   static DiagnosticStateResultProto create() => DiagnosticStateResultProto._();
   @$core.override
   DiagnosticStateResultProto createEmptyInstance() => create();
-  static $pb.PbList<DiagnosticStateResultProto> createRepeated() =>
-      $pb.PbList<DiagnosticStateResultProto>();
   @$core.pragma('dart2js:noInline')
   static DiagnosticStateResultProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DiagnosticStateResultProto>(create);
@@ -698,8 +684,6 @@ class RequestPermissionsStatusResultProto extends $pb.GeneratedMessage {
       RequestPermissionsStatusResultProto._();
   @$core.override
   RequestPermissionsStatusResultProto createEmptyInstance() => create();
-  static $pb.PbList<RequestPermissionsStatusResultProto> createRepeated() =>
-      $pb.PbList<RequestPermissionsStatusResultProto>();
   @$core.pragma('dart2js:noInline')
   static RequestPermissionsStatusResultProto getDefault() =>
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
@@ -780,8 +764,6 @@ class SamsungHealthPermissionsSummaryProto extends $pb.GeneratedMessage {
       SamsungHealthPermissionsSummaryProto._();
   @$core.override
   SamsungHealthPermissionsSummaryProto createEmptyInstance() => create();
-  static $pb.PbList<SamsungHealthPermissionsSummaryProto> createRepeated() =>
-      $pb.PbList<SamsungHealthPermissionsSummaryProto>();
   @$core.pragma('dart2js:noInline')
   static SamsungHealthPermissionsSummaryProto getDefault() =>
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<
@@ -848,8 +830,6 @@ class CaloriesProto extends $pb.GeneratedMessage {
   static CaloriesProto create() => CaloriesProto._();
   @$core.override
   CaloriesProto createEmptyInstance() => create();
-  static $pb.PbList<CaloriesProto> createRepeated() =>
-      $pb.PbList<CaloriesProto>();
   @$core.pragma('dart2js:noInline')
   static CaloriesProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<CaloriesProto>(create);
@@ -926,8 +906,6 @@ class CaloriesResultProto extends $pb.GeneratedMessage {
   static CaloriesResultProto create() => CaloriesResultProto._();
   @$core.override
   CaloriesResultProto createEmptyInstance() => create();
-  static $pb.PbList<CaloriesResultProto> createRepeated() =>
-      $pb.PbList<CaloriesResultProto>();
   @$core.pragma('dart2js:noInline')
   static CaloriesResultProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<CaloriesResultProto>(create);
@@ -1043,8 +1021,6 @@ class HearRateProto extends $pb.GeneratedMessage {
   static HearRateProto create() => HearRateProto._();
   @$core.override
   HearRateProto createEmptyInstance() => create();
-  static $pb.PbList<HearRateProto> createRepeated() =>
-      $pb.PbList<HearRateProto>();
   @$core.pragma('dart2js:noInline')
   static HearRateProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<HearRateProto>(create);
@@ -1167,8 +1143,6 @@ class HearRateResultProto extends $pb.GeneratedMessage {
   static HearRateResultProto create() => HearRateResultProto._();
   @$core.override
   HearRateResultProto createEmptyInstance() => create();
-  static $pb.PbList<HearRateResultProto> createRepeated() =>
-      $pb.PbList<HearRateResultProto>();
   @$core.pragma('dart2js:noInline')
   static HearRateResultProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<HearRateResultProto>(create);
@@ -1482,8 +1456,6 @@ class SleepSummaryProto extends $pb.GeneratedMessage {
   static SleepSummaryProto create() => SleepSummaryProto._();
   @$core.override
   SleepSummaryProto createEmptyInstance() => create();
-  static $pb.PbList<SleepSummaryProto> createRepeated() =>
-      $pb.PbList<SleepSummaryProto>();
   @$core.pragma('dart2js:noInline')
   static SleepSummaryProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SleepSummaryProto>(create);
@@ -1868,8 +1840,6 @@ class SleepSummariesProto extends $pb.GeneratedMessage {
   static SleepSummariesProto create() => SleepSummariesProto._();
   @$core.override
   SleepSummariesProto createEmptyInstance() => create();
-  static $pb.PbList<SleepSummariesProto> createRepeated() =>
-      $pb.PbList<SleepSummariesProto>();
   @$core.pragma('dart2js:noInline')
   static SleepSummariesProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SleepSummariesProto>(create);
@@ -1933,8 +1903,6 @@ class SleepSummaryResultProto extends $pb.GeneratedMessage {
   static SleepSummaryResultProto create() => SleepSummaryResultProto._();
   @$core.override
   SleepSummaryResultProto createEmptyInstance() => create();
-  static $pb.PbList<SleepSummaryResultProto> createRepeated() =>
-      $pb.PbList<SleepSummaryResultProto>();
   @$core.pragma('dart2js:noInline')
   static SleepSummaryResultProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SleepSummaryResultProto>(create);
@@ -2347,8 +2315,6 @@ class PhysicalSummaryProto extends $pb.GeneratedMessage {
   static PhysicalSummaryProto create() => PhysicalSummaryProto._();
   @$core.override
   PhysicalSummaryProto createEmptyInstance() => create();
-  static $pb.PbList<PhysicalSummaryProto> createRepeated() =>
-      $pb.PbList<PhysicalSummaryProto>();
   @$core.pragma('dart2js:noInline')
   static PhysicalSummaryProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PhysicalSummaryProto>(create);
@@ -2860,8 +2826,6 @@ class PhysicalSummaryResultProto extends $pb.GeneratedMessage {
   static PhysicalSummaryResultProto create() => PhysicalSummaryResultProto._();
   @$core.override
   PhysicalSummaryResultProto createEmptyInstance() => create();
-  static $pb.PbList<PhysicalSummaryResultProto> createRepeated() =>
-      $pb.PbList<PhysicalSummaryResultProto>();
   @$core.pragma('dart2js:noInline')
   static PhysicalSummaryResultProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PhysicalSummaryResultProto>(create);
@@ -3298,8 +3262,6 @@ class BodySummaryProto extends $pb.GeneratedMessage {
   static BodySummaryProto create() => BodySummaryProto._();
   @$core.override
   BodySummaryProto createEmptyInstance() => create();
-  static $pb.PbList<BodySummaryProto> createRepeated() =>
-      $pb.PbList<BodySummaryProto>();
   @$core.pragma('dart2js:noInline')
   static BodySummaryProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<BodySummaryProto>(create);
@@ -3846,8 +3808,6 @@ class BodySummaryResultProto extends $pb.GeneratedMessage {
   static BodySummaryResultProto create() => BodySummaryResultProto._();
   @$core.override
   BodySummaryResultProto createEmptyInstance() => create();
-  static $pb.PbList<BodySummaryResultProto> createRepeated() =>
-      $pb.PbList<BodySummaryResultProto>();
   @$core.pragma('dart2js:noInline')
   static BodySummaryResultProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<BodySummaryResultProto>(create);
@@ -4446,8 +4406,6 @@ class ActivityEventProto extends $pb.GeneratedMessage {
   static ActivityEventProto create() => ActivityEventProto._();
   @$core.override
   ActivityEventProto createEmptyInstance() => create();
-  static $pb.PbList<ActivityEventProto> createRepeated() =>
-      $pb.PbList<ActivityEventProto>();
   @$core.pragma('dart2js:noInline')
   static ActivityEventProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ActivityEventProto>(create);
@@ -5176,8 +5134,6 @@ class ActivityEventsProto extends $pb.GeneratedMessage {
   static ActivityEventsProto create() => ActivityEventsProto._();
   @$core.override
   ActivityEventsProto createEmptyInstance() => create();
-  static $pb.PbList<ActivityEventsProto> createRepeated() =>
-      $pb.PbList<ActivityEventsProto>();
   @$core.pragma('dart2js:noInline')
   static ActivityEventsProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ActivityEventsProto>(create);
@@ -5241,8 +5197,6 @@ class ActivityEventResultProto extends $pb.GeneratedMessage {
   static ActivityEventResultProto create() => ActivityEventResultProto._();
   @$core.override
   ActivityEventResultProto createEmptyInstance() => create();
-  static $pb.PbList<ActivityEventResultProto> createRepeated() =>
-      $pb.PbList<ActivityEventResultProto>();
   @$core.pragma('dart2js:noInline')
   static ActivityEventResultProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ActivityEventResultProto>(create);
@@ -5327,8 +5281,6 @@ class ActiveStepsGranularDataProto extends $pb.GeneratedMessage {
       ActiveStepsGranularDataProto._();
   @$core.override
   ActiveStepsGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<ActiveStepsGranularDataProto> createRepeated() =>
-      $pb.PbList<ActiveStepsGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static ActiveStepsGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ActiveStepsGranularDataProto>(create);
@@ -5409,8 +5361,6 @@ class ActivityLevelGranularDataProto extends $pb.GeneratedMessage {
       ActivityLevelGranularDataProto._();
   @$core.override
   ActivityLevelGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<ActivityLevelGranularDataProto> createRepeated() =>
-      $pb.PbList<ActivityLevelGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static ActivityLevelGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ActivityLevelGranularDataProto>(create);
@@ -5483,8 +5433,6 @@ class BloodGlucoseGranularDataProto extends $pb.GeneratedMessage {
       BloodGlucoseGranularDataProto._();
   @$core.override
   BloodGlucoseGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<BloodGlucoseGranularDataProto> createRepeated() =>
-      $pb.PbList<BloodGlucoseGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static BloodGlucoseGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<BloodGlucoseGranularDataProto>(create);
@@ -5561,8 +5509,6 @@ class BloodPressureGranularDataProto extends $pb.GeneratedMessage {
       BloodPressureGranularDataProto._();
   @$core.override
   BloodPressureGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<BloodPressureGranularDataProto> createRepeated() =>
-      $pb.PbList<BloodPressureGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static BloodPressureGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<BloodPressureGranularDataProto>(create);
@@ -5642,8 +5588,6 @@ class BreathingGranularDataProto extends $pb.GeneratedMessage {
   static BreathingGranularDataProto create() => BreathingGranularDataProto._();
   @$core.override
   BreathingGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<BreathingGranularDataProto> createRepeated() =>
-      $pb.PbList<BreathingGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static BreathingGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<BreathingGranularDataProto>(create);
@@ -5719,8 +5663,6 @@ class CadenceGranularDataProto extends $pb.GeneratedMessage {
   static CadenceGranularDataProto create() => CadenceGranularDataProto._();
   @$core.override
   CadenceGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<CadenceGranularDataProto> createRepeated() =>
-      $pb.PbList<CadenceGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static CadenceGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<CadenceGranularDataProto>(create);
@@ -5807,8 +5749,6 @@ class ElevationGranularDataProto extends $pb.GeneratedMessage {
   static ElevationGranularDataProto create() => ElevationGranularDataProto._();
   @$core.override
   ElevationGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<ElevationGranularDataProto> createRepeated() =>
-      $pb.PbList<ElevationGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static ElevationGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ElevationGranularDataProto>(create);
@@ -5895,8 +5835,6 @@ class FloorsClimbedGranularDataProto extends $pb.GeneratedMessage {
       FloorsClimbedGranularDataProto._();
   @$core.override
   FloorsClimbedGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<FloorsClimbedGranularDataProto> createRepeated() =>
-      $pb.PbList<FloorsClimbedGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static FloorsClimbedGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<FloorsClimbedGranularDataProto>(create);
@@ -5972,8 +5910,6 @@ class HrGranularDataProto extends $pb.GeneratedMessage {
   static HrGranularDataProto create() => HrGranularDataProto._();
   @$core.override
   HrGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<HrGranularDataProto> createRepeated() =>
-      $pb.PbList<HrGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static HrGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<HrGranularDataProto>(create);
@@ -6042,8 +5978,6 @@ class HrvSdnnGranularDataProto extends $pb.GeneratedMessage {
   static HrvSdnnGranularDataProto create() => HrvSdnnGranularDataProto._();
   @$core.override
   HrvSdnnGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<HrvSdnnGranularDataProto> createRepeated() =>
-      $pb.PbList<HrvSdnnGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static HrvSdnnGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<HrvSdnnGranularDataProto>(create);
@@ -6115,8 +6049,6 @@ class MenstruationFlowGranularDataProto extends $pb.GeneratedMessage {
       MenstruationFlowGranularDataProto._();
   @$core.override
   MenstruationFlowGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<MenstruationFlowGranularDataProto> createRepeated() =>
-      $pb.PbList<MenstruationFlowGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static MenstruationFlowGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<MenstruationFlowGranularDataProto>(
@@ -6192,8 +6124,6 @@ class MoodGranularDataProto extends $pb.GeneratedMessage {
   static MoodGranularDataProto create() => MoodGranularDataProto._();
   @$core.override
   MoodGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<MoodGranularDataProto> createRepeated() =>
-      $pb.PbList<MoodGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static MoodGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<MoodGranularDataProto>(create);
@@ -6275,8 +6205,6 @@ class LapGranularDataProto extends $pb.GeneratedMessage {
   static LapGranularDataProto create() => LapGranularDataProto._();
   @$core.override
   LapGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<LapGranularDataProto> createRepeated() =>
-      $pb.PbList<LapGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static LapGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<LapGranularDataProto>(create);
@@ -6361,8 +6289,6 @@ class PowerGranularDataProto extends $pb.GeneratedMessage {
   static PowerGranularDataProto create() => PowerGranularDataProto._();
   @$core.override
   PowerGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<PowerGranularDataProto> createRepeated() =>
-      $pb.PbList<PowerGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static PowerGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PowerGranularDataProto>(create);
@@ -6450,8 +6376,6 @@ class PositionGranularDataProto extends $pb.GeneratedMessage {
   static PositionGranularDataProto create() => PositionGranularDataProto._();
   @$core.override
   PositionGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<PositionGranularDataProto> createRepeated() =>
-      $pb.PbList<PositionGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static PositionGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PositionGranularDataProto>(create);
@@ -6548,8 +6472,6 @@ class HydrationAmountGranularDataProto extends $pb.GeneratedMessage {
       HydrationAmountGranularDataProto._();
   @$core.override
   HydrationAmountGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<HydrationAmountGranularDataProto> createRepeated() =>
-      $pb.PbList<HydrationAmountGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static HydrationAmountGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<HydrationAmountGranularDataProto>(
@@ -6632,8 +6554,6 @@ class SaturationGranularDataProto extends $pb.GeneratedMessage {
       SaturationGranularDataProto._();
   @$core.override
   SaturationGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<SaturationGranularDataProto> createRepeated() =>
-      $pb.PbList<SaturationGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static SaturationGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SaturationGranularDataProto>(create);
@@ -6712,8 +6632,6 @@ class HydrationLevelGranularDataProto extends $pb.GeneratedMessage {
       HydrationLevelGranularDataProto._();
   @$core.override
   HydrationLevelGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<HydrationLevelGranularDataProto> createRepeated() =>
-      $pb.PbList<HydrationLevelGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static HydrationLevelGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<HydrationLevelGranularDataProto>(
@@ -6792,8 +6710,6 @@ class HrvRmssdGranularDataProto extends $pb.GeneratedMessage {
   static HrvRmssdGranularDataProto create() => HrvRmssdGranularDataProto._();
   @$core.override
   HrvRmssdGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<HrvRmssdGranularDataProto> createRepeated() =>
-      $pb.PbList<HrvRmssdGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static HrvRmssdGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<HrvRmssdGranularDataProto>(create);
@@ -6870,8 +6786,6 @@ class SnoringGranularDataProto extends $pb.GeneratedMessage {
   static SnoringGranularDataProto create() => SnoringGranularDataProto._();
   @$core.override
   SnoringGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<SnoringGranularDataProto> createRepeated() =>
-      $pb.PbList<SnoringGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static SnoringGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SnoringGranularDataProto>(create);
@@ -6957,8 +6871,6 @@ class SpeedGranularDataProto extends $pb.GeneratedMessage {
   static SpeedGranularDataProto create() => SpeedGranularDataProto._();
   @$core.override
   SpeedGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<SpeedGranularDataProto> createRepeated() =>
-      $pb.PbList<SpeedGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static SpeedGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SpeedGranularDataProto>(create);
@@ -7041,8 +6953,6 @@ class StepsGranularDataProto extends $pb.GeneratedMessage {
   static StepsGranularDataProto create() => StepsGranularDataProto._();
   @$core.override
   StepsGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<StepsGranularDataProto> createRepeated() =>
-      $pb.PbList<StepsGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static StepsGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<StepsGranularDataProto>(create);
@@ -7120,8 +7030,6 @@ class StressGranularDataProto extends $pb.GeneratedMessage {
   static StressGranularDataProto create() => StressGranularDataProto._();
   @$core.override
   StressGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<StressGranularDataProto> createRepeated() =>
-      $pb.PbList<StressGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static StressGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<StressGranularDataProto>(create);
@@ -7201,8 +7109,6 @@ class SwimmingDistanceGranularDataProto extends $pb.GeneratedMessage {
       SwimmingDistanceGranularDataProto._();
   @$core.override
   SwimmingDistanceGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<SwimmingDistanceGranularDataProto> createRepeated() =>
-      $pb.PbList<SwimmingDistanceGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static SwimmingDistanceGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SwimmingDistanceGranularDataProto>(
@@ -7289,8 +7195,6 @@ class TemperatureGranularDataProto extends $pb.GeneratedMessage {
       TemperatureGranularDataProto._();
   @$core.override
   TemperatureGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<TemperatureGranularDataProto> createRepeated() =>
-      $pb.PbList<TemperatureGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static TemperatureGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<TemperatureGranularDataProto>(create);
@@ -7376,8 +7280,6 @@ class TorqueGranularDataProto extends $pb.GeneratedMessage {
   static TorqueGranularDataProto create() => TorqueGranularDataProto._();
   @$core.override
   TorqueGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<TorqueGranularDataProto> createRepeated() =>
-      $pb.PbList<TorqueGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static TorqueGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<TorqueGranularDataProto>(create);
@@ -7466,8 +7368,6 @@ class TraveledDistanceGranularDataProto extends $pb.GeneratedMessage {
       TraveledDistanceGranularDataProto._();
   @$core.override
   TraveledDistanceGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<TraveledDistanceGranularDataProto> createRepeated() =>
-      $pb.PbList<TraveledDistanceGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static TraveledDistanceGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<TraveledDistanceGranularDataProto>(
@@ -7551,8 +7451,6 @@ class TssGranularDataProto extends $pb.GeneratedMessage {
   static TssGranularDataProto create() => TssGranularDataProto._();
   @$core.override
   TssGranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<TssGranularDataProto> createRepeated() =>
-      $pb.PbList<TssGranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static TssGranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<TssGranularDataProto>(create);
@@ -7630,8 +7528,6 @@ class Vo2GranularDataProto extends $pb.GeneratedMessage {
   static Vo2GranularDataProto create() => Vo2GranularDataProto._();
   @$core.override
   Vo2GranularDataProto createEmptyInstance() => create();
-  static $pb.PbList<Vo2GranularDataProto> createRepeated() =>
-      $pb.PbList<Vo2GranularDataProto>();
   @$core.pragma('dart2js:noInline')
   static Vo2GranularDataProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<Vo2GranularDataProto>(create);
@@ -7703,8 +7599,6 @@ class BloodPressureObjectProto extends $pb.GeneratedMessage {
   static BloodPressureObjectProto create() => BloodPressureObjectProto._();
   @$core.override
   BloodPressureObjectProto createEmptyInstance() => create();
-  static $pb.PbList<BloodPressureObjectProto> createRepeated() =>
-      $pb.PbList<BloodPressureObjectProto>();
   @$core.pragma('dart2js:noInline')
   static BloodPressureObjectProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<BloodPressureObjectProto>(create);
@@ -7772,8 +7666,6 @@ class PositionObjectProto extends $pb.GeneratedMessage {
   static PositionObjectProto create() => PositionObjectProto._();
   @$core.override
   PositionObjectProto createEmptyInstance() => create();
-  static $pb.PbList<PositionObjectProto> createRepeated() =>
-      $pb.PbList<PositionObjectProto>();
   @$core.pragma('dart2js:noInline')
   static PositionObjectProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PositionObjectProto>(create);
@@ -7845,8 +7737,6 @@ class TemperatureObjectProto extends $pb.GeneratedMessage {
   static TemperatureObjectProto create() => TemperatureObjectProto._();
   @$core.override
   TemperatureObjectProto createEmptyInstance() => create();
-  static $pb.PbList<TemperatureObjectProto> createRepeated() =>
-      $pb.PbList<TemperatureObjectProto>();
   @$core.pragma('dart2js:noInline')
   static TemperatureObjectProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<TemperatureObjectProto>(create);
@@ -7915,8 +7805,6 @@ class VelocityObjectProto extends $pb.GeneratedMessage {
   static VelocityObjectProto create() => VelocityObjectProto._();
   @$core.override
   VelocityObjectProto createEmptyInstance() => create();
-  static $pb.PbList<VelocityObjectProto> createRepeated() =>
-      $pb.PbList<VelocityObjectProto>();
   @$core.pragma('dart2js:noInline')
   static VelocityObjectProto getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<VelocityObjectProto>(create);
