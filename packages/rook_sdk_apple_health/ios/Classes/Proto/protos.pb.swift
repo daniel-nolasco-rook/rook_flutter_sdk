@@ -15,12 +15,12 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-enum EnvironmentProto: SwiftProtobuf.Enum, Swift.CaseIterable {
+nonisolated enum EnvironmentProto: SwiftProtobuf.Enum, Swift.CaseIterable {
   typealias RawValue = Int
   case sandbox // = 0
   case production // = 1
@@ -54,7 +54,7 @@ enum EnvironmentProto: SwiftProtobuf.Enum, Swift.CaseIterable {
 
 }
 
-enum DiagnosticStatePermissionsProto: SwiftProtobuf.Enum, Swift.CaseIterable {
+nonisolated enum DiagnosticStatePermissionsProto: SwiftProtobuf.Enum, Swift.CaseIterable {
   typealias RawValue = Int
   case notRequested // = 0
   case requested // = 1
@@ -92,7 +92,7 @@ enum DiagnosticStatePermissionsProto: SwiftProtobuf.Enum, Swift.CaseIterable {
 
 }
 
-enum AppleHealthPermissionProto: SwiftProtobuf.Enum, Swift.CaseIterable {
+nonisolated enum AppleHealthPermissionProto: SwiftProtobuf.Enum, Swift.CaseIterable {
   typealias RawValue = Int
   case appleExerciseTime // = 0
   case appleMoveTime // = 1
@@ -466,7 +466,7 @@ enum AppleHealthPermissionProto: SwiftProtobuf.Enum, Swift.CaseIterable {
 
 }
 
-enum SummarySyncTypeProto: SwiftProtobuf.Enum, Swift.CaseIterable {
+nonisolated enum SummarySyncTypeProto: SwiftProtobuf.Enum, Swift.CaseIterable {
   typealias RawValue = Int
   case sleep // = 0
   case physical // = 1
@@ -504,7 +504,7 @@ enum SummarySyncTypeProto: SwiftProtobuf.Enum, Swift.CaseIterable {
 
 }
 
-enum EventSyncTypeProto: SwiftProtobuf.Enum, Swift.CaseIterable {
+nonisolated enum EventSyncTypeProto: SwiftProtobuf.Enum, Swift.CaseIterable {
   typealias RawValue = Int
   case activity // = 0
   case bloodGlucose // = 1
@@ -578,7 +578,7 @@ enum EventSyncTypeProto: SwiftProtobuf.Enum, Swift.CaseIterable {
 
 }
 
-struct SDKExceptionProto: Sendable {
+nonisolated struct SDKExceptionProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -592,7 +592,7 @@ struct SDKExceptionProto: Sendable {
   init() {}
 }
 
-struct BooleanResultProto: Sendable {
+nonisolated struct BooleanResultProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -617,7 +617,7 @@ struct BooleanResultProto: Sendable {
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_Result: Equatable, Sendable {
+  nonisolated enum OneOf_Result: Equatable, Sendable {
     case success(Bool)
     case failure(SDKExceptionProto)
 
@@ -626,7 +626,7 @@ struct BooleanResultProto: Sendable {
   init() {}
 }
 
-struct Int64ResultProto: Sendable {
+nonisolated struct Int64ResultProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -651,7 +651,7 @@ struct Int64ResultProto: Sendable {
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_Result: Equatable, Sendable {
+  nonisolated enum OneOf_Result: Equatable, Sendable {
     case success(Int64)
     case failure(SDKExceptionProto)
 
@@ -660,7 +660,7 @@ struct Int64ResultProto: Sendable {
   init() {}
 }
 
-struct ConfigurationProto: Sendable {
+nonisolated struct ConfigurationProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -680,7 +680,7 @@ struct ConfigurationProto: Sendable {
   init() {}
 }
 
-struct DiagnosticSyncStateProto: Sendable {
+nonisolated struct DiagnosticSyncStateProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -694,7 +694,7 @@ struct DiagnosticSyncStateProto: Sendable {
   init() {}
 }
 
-struct DiagnosticStateProto: Sendable {
+nonisolated struct DiagnosticStateProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -706,20 +706,20 @@ struct DiagnosticStateProto: Sendable {
   var permissions: DiagnosticStatePermissionsProto = .notRequested
 
   var backgroundSync: DiagnosticSyncStateProto {
-    get {return _backgroundSync ?? DiagnosticSyncStateProto()}
+    get {_backgroundSync ?? DiagnosticSyncStateProto()}
     set {_backgroundSync = newValue}
   }
   /// Returns true if `backgroundSync` has been explicitly set.
-  var hasBackgroundSync: Bool {return self._backgroundSync != nil}
+  var hasBackgroundSync: Bool {self._backgroundSync != nil}
   /// Clears the value of `backgroundSync`. Subsequent reads from it will return its default value.
   mutating func clearBackgroundSync() {self._backgroundSync = nil}
 
   var manualSync: DiagnosticSyncStateProto {
-    get {return _manualSync ?? DiagnosticSyncStateProto()}
+    get {_manualSync ?? DiagnosticSyncStateProto()}
     set {_manualSync = newValue}
   }
   /// Returns true if `manualSync` has been explicitly set.
-  var hasManualSync: Bool {return self._manualSync != nil}
+  var hasManualSync: Bool {self._manualSync != nil}
   /// Clears the value of `manualSync`. Subsequent reads from it will return its default value.
   mutating func clearManualSync() {self._manualSync = nil}
 
@@ -731,7 +731,7 @@ struct DiagnosticStateProto: Sendable {
   fileprivate var _manualSync: DiagnosticSyncStateProto? = nil
 }
 
-struct DiagnosticStateResultProto: Sendable {
+nonisolated struct DiagnosticStateResultProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -756,7 +756,7 @@ struct DiagnosticStateResultProto: Sendable {
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_Result: Equatable, Sendable {
+  nonisolated enum OneOf_Result: Equatable, Sendable {
     case success(DiagnosticStateProto)
     case failure(SDKExceptionProto)
 
@@ -765,7 +765,7 @@ struct DiagnosticStateResultProto: Sendable {
   init() {}
 }
 
-struct CaloriesProto: Sendable {
+nonisolated struct CaloriesProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -779,7 +779,7 @@ struct CaloriesProto: Sendable {
   init() {}
 }
 
-struct CaloriesResultProto: Sendable {
+nonisolated struct CaloriesResultProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -804,7 +804,7 @@ struct CaloriesResultProto: Sendable {
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_Result: Equatable, Sendable {
+  nonisolated enum OneOf_Result: Equatable, Sendable {
     case success(CaloriesProto)
     case failure(SDKExceptionProto)
 
@@ -813,7 +813,7 @@ struct CaloriesResultProto: Sendable {
   init() {}
 }
 
-struct HearRateProto: Sendable {
+nonisolated struct HearRateProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -841,7 +841,7 @@ struct HearRateProto: Sendable {
   init() {}
 }
 
-struct HearRateResultProto: Sendable {
+nonisolated struct HearRateResultProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -866,7 +866,7 @@ struct HearRateResultProto: Sendable {
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_Result: Equatable, Sendable {
+  nonisolated enum OneOf_Result: Equatable, Sendable {
     case success(HearRateProto)
     case failure(SDKExceptionProto)
 
@@ -875,228 +875,228 @@ struct HearRateResultProto: Sendable {
   init() {}
 }
 
-struct SleepSummaryProto: @unchecked Sendable {
+nonisolated struct SleepSummaryProto: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var dateTime: String {
-    get {return _storage._dateTime}
+    get {_storage._dateTime}
     set {_uniqueStorage()._dateTime = newValue}
   }
 
   var sourceOfData: String {
-    get {return _storage._sourceOfData}
+    get {_storage._sourceOfData}
     set {_uniqueStorage()._sourceOfData = newValue}
   }
 
   var wasTheUserUnderPhysicalActivity: Bool {
-    get {return _storage._wasTheUserUnderPhysicalActivity}
+    get {_storage._wasTheUserUnderPhysicalActivity}
     set {_uniqueStorage()._wasTheUserUnderPhysicalActivity = newValue}
   }
 
   var sleepStartDateTime: String {
-    get {return _storage._sleepStartDateTime}
+    get {_storage._sleepStartDateTime}
     set {_uniqueStorage()._sleepStartDateTime = newValue}
   }
 
   var sleepEndDateTime: String {
-    get {return _storage._sleepEndDateTime}
+    get {_storage._sleepEndDateTime}
     set {_uniqueStorage()._sleepEndDateTime = newValue}
   }
 
   var sleepDate: String {
-    get {return _storage._sleepDate}
+    get {_storage._sleepDate}
     set {_uniqueStorage()._sleepDate = newValue}
   }
 
   var sleepDurationSeconds: Int32 {
-    get {return _storage._sleepDurationSeconds}
+    get {_storage._sleepDurationSeconds}
     set {_uniqueStorage()._sleepDurationSeconds = newValue}
   }
 
   var timeInBedSeconds: Int32 {
-    get {return _storage._timeInBedSeconds}
+    get {_storage._timeInBedSeconds}
     set {_uniqueStorage()._timeInBedSeconds = newValue}
   }
 
   var lightSleepDurationSeconds: Int32 {
-    get {return _storage._lightSleepDurationSeconds}
+    get {_storage._lightSleepDurationSeconds}
     set {_uniqueStorage()._lightSleepDurationSeconds = newValue}
   }
 
   var remSleepDurationSeconds: Int32 {
-    get {return _storage._remSleepDurationSeconds}
+    get {_storage._remSleepDurationSeconds}
     set {_uniqueStorage()._remSleepDurationSeconds = newValue}
   }
 
   var deepSleepDurationSeconds: Int32 {
-    get {return _storage._deepSleepDurationSeconds}
+    get {_storage._deepSleepDurationSeconds}
     set {_uniqueStorage()._deepSleepDurationSeconds = newValue}
   }
 
   var timeToFallAsleepSeconds: Int32 {
-    get {return _storage._timeToFallAsleepSeconds}
+    get {_storage._timeToFallAsleepSeconds}
     set {_uniqueStorage()._timeToFallAsleepSeconds = newValue}
   }
 
   var timeAwakeDuringSleepSeconds: Int32 {
-    get {return _storage._timeAwakeDuringSleepSeconds}
+    get {_storage._timeAwakeDuringSleepSeconds}
     set {_uniqueStorage()._timeAwakeDuringSleepSeconds = newValue}
   }
 
   var sleepQualityRating1To5Score: Int32 {
-    get {return _storage._sleepQualityRating1To5Score}
+    get {_storage._sleepQualityRating1To5Score}
     set {_uniqueStorage()._sleepQualityRating1To5Score = newValue}
   }
 
   var sleepEfficiency1To100Score: Int32 {
-    get {return _storage._sleepEfficiency1To100Score}
+    get {_storage._sleepEfficiency1To100Score}
     set {_uniqueStorage()._sleepEfficiency1To100Score = newValue}
   }
 
   var sleepGoalSeconds: Int32 {
-    get {return _storage._sleepGoalSeconds}
+    get {_storage._sleepGoalSeconds}
     set {_uniqueStorage()._sleepGoalSeconds = newValue}
   }
 
   var sleepContinuity1To5Score: Int32 {
-    get {return _storage._sleepContinuity1To5Score}
+    get {_storage._sleepContinuity1To5Score}
     set {_uniqueStorage()._sleepContinuity1To5Score = newValue}
   }
 
   var sleepContinuity1To5Rating: Int32 {
-    get {return _storage._sleepContinuity1To5Rating}
+    get {_storage._sleepContinuity1To5Rating}
     set {_uniqueStorage()._sleepContinuity1To5Rating = newValue}
   }
 
   var hrMaximumBpm: Int32 {
-    get {return _storage._hrMaximumBpm}
+    get {_storage._hrMaximumBpm}
     set {_uniqueStorage()._hrMaximumBpm = newValue}
   }
 
   var hrMinimumBpm: Int32 {
-    get {return _storage._hrMinimumBpm}
+    get {_storage._hrMinimumBpm}
     set {_uniqueStorage()._hrMinimumBpm = newValue}
   }
 
   var hrAvgBpm: Int32 {
-    get {return _storage._hrAvgBpm}
+    get {_storage._hrAvgBpm}
     set {_uniqueStorage()._hrAvgBpm = newValue}
   }
 
   var hrRestingBpm: Int32 {
-    get {return _storage._hrRestingBpm}
+    get {_storage._hrRestingBpm}
     set {_uniqueStorage()._hrRestingBpm = newValue}
   }
 
   var hrBasalBpm: Int32 {
-    get {return _storage._hrBasalBpm}
+    get {_storage._hrBasalBpm}
     set {_uniqueStorage()._hrBasalBpm = newValue}
   }
 
   var hrGranularData: [HrGranularDataProto] {
-    get {return _storage._hrGranularData}
+    get {_storage._hrGranularData}
     set {_uniqueStorage()._hrGranularData = newValue}
   }
 
   var hrvAvgRmssd: Double {
-    get {return _storage._hrvAvgRmssd}
+    get {_storage._hrvAvgRmssd}
     set {_uniqueStorage()._hrvAvgRmssd = newValue}
   }
 
   var hrvAvgSdnn: Double {
-    get {return _storage._hrvAvgSdnn}
+    get {_storage._hrvAvgSdnn}
     set {_uniqueStorage()._hrvAvgSdnn = newValue}
   }
 
   var hrvSdnnGranularData: [HrvSdnnGranularDataProto] {
-    get {return _storage._hrvSdnnGranularData}
+    get {_storage._hrvSdnnGranularData}
     set {_uniqueStorage()._hrvSdnnGranularData = newValue}
   }
 
   var hrvRmssdGranularData: [HrvRmssdGranularDataProto] {
-    get {return _storage._hrvRmssdGranularData}
+    get {_storage._hrvRmssdGranularData}
     set {_uniqueStorage()._hrvRmssdGranularData = newValue}
   }
 
   var temperatureMinimum: [TemperatureObjectProto] {
-    get {return _storage._temperatureMinimum}
+    get {_storage._temperatureMinimum}
     set {_uniqueStorage()._temperatureMinimum = newValue}
   }
 
   var temperatureAvg: [TemperatureObjectProto] {
-    get {return _storage._temperatureAvg}
+    get {_storage._temperatureAvg}
     set {_uniqueStorage()._temperatureAvg = newValue}
   }
 
   var temperatureMaximum: [TemperatureObjectProto] {
-    get {return _storage._temperatureMaximum}
+    get {_storage._temperatureMaximum}
     set {_uniqueStorage()._temperatureMaximum = newValue}
   }
 
   var temperatureGranularData: [TemperatureGranularDataProto] {
-    get {return _storage._temperatureGranularData}
+    get {_storage._temperatureGranularData}
     set {_uniqueStorage()._temperatureGranularData = newValue}
   }
 
   var temperatureDelta: [TemperatureObjectProto] {
-    get {return _storage._temperatureDelta}
+    get {_storage._temperatureDelta}
     set {_uniqueStorage()._temperatureDelta = newValue}
   }
 
   var breathsMinimumPerMin: Double {
-    get {return _storage._breathsMinimumPerMin}
+    get {_storage._breathsMinimumPerMin}
     set {_uniqueStorage()._breathsMinimumPerMin = newValue}
   }
 
   var breathsAvgPerMin: Double {
-    get {return _storage._breathsAvgPerMin}
+    get {_storage._breathsAvgPerMin}
     set {_uniqueStorage()._breathsAvgPerMin = newValue}
   }
 
   var breathsMaximumPerMin: Double {
-    get {return _storage._breathsMaximumPerMin}
+    get {_storage._breathsMaximumPerMin}
     set {_uniqueStorage()._breathsMaximumPerMin = newValue}
   }
 
   var breathingGranularData: [BreathingGranularDataProto] {
-    get {return _storage._breathingGranularData}
+    get {_storage._breathingGranularData}
     set {_uniqueStorage()._breathingGranularData = newValue}
   }
 
   var snoringEventsCount: Int32 {
-    get {return _storage._snoringEventsCount}
+    get {_storage._snoringEventsCount}
     set {_uniqueStorage()._snoringEventsCount = newValue}
   }
 
   var snoringDurationTotalSeconds: Int32 {
-    get {return _storage._snoringDurationTotalSeconds}
+    get {_storage._snoringDurationTotalSeconds}
     set {_uniqueStorage()._snoringDurationTotalSeconds = newValue}
   }
 
   var snoringGranularData: [SnoringGranularDataProto] {
-    get {return _storage._snoringGranularData}
+    get {_storage._snoringGranularData}
     set {_uniqueStorage()._snoringGranularData = newValue}
   }
 
   var saturationAvgPercentage: Double {
-    get {return _storage._saturationAvgPercentage}
+    get {_storage._saturationAvgPercentage}
     set {_uniqueStorage()._saturationAvgPercentage = newValue}
   }
 
   var saturationMinimumPercentage: Double {
-    get {return _storage._saturationMinimumPercentage}
+    get {_storage._saturationMinimumPercentage}
     set {_uniqueStorage()._saturationMinimumPercentage = newValue}
   }
 
   var saturationMaximumPercentage: Double {
-    get {return _storage._saturationMaximumPercentage}
+    get {_storage._saturationMaximumPercentage}
     set {_uniqueStorage()._saturationMaximumPercentage = newValue}
   }
 
   var saturationGranularData: [SaturationGranularDataProto] {
-    get {return _storage._saturationGranularData}
+    get {_storage._saturationGranularData}
     set {_uniqueStorage()._saturationGranularData = newValue}
   }
 
@@ -1107,7 +1107,7 @@ struct SleepSummaryProto: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct SleepSummariesProto: Sendable {
+nonisolated struct SleepSummariesProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1119,7 +1119,7 @@ struct SleepSummariesProto: Sendable {
   init() {}
 }
 
-struct SleepSummaryResultProto: Sendable {
+nonisolated struct SleepSummaryResultProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1144,7 +1144,7 @@ struct SleepSummaryResultProto: Sendable {
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_Result: Equatable, Sendable {
+  nonisolated enum OneOf_Result: Equatable, Sendable {
     case success(SleepSummariesProto)
     case failure(SDKExceptionProto)
 
@@ -1153,293 +1153,293 @@ struct SleepSummaryResultProto: Sendable {
   init() {}
 }
 
-struct PhysicalSummaryProto: @unchecked Sendable {
+nonisolated struct PhysicalSummaryProto: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var dateTime: String {
-    get {return _storage._dateTime}
+    get {_storage._dateTime}
     set {_uniqueStorage()._dateTime = newValue}
   }
 
   var sourceOfData: String {
-    get {return _storage._sourceOfData}
+    get {_storage._sourceOfData}
     set {_uniqueStorage()._sourceOfData = newValue}
   }
 
   var wasTheUserUnderPhysicalActivity: Bool {
-    get {return _storage._wasTheUserUnderPhysicalActivity}
+    get {_storage._wasTheUserUnderPhysicalActivity}
     set {_uniqueStorage()._wasTheUserUnderPhysicalActivity = newValue}
   }
 
   var activeSeconds: Int32 {
-    get {return _storage._activeSeconds}
+    get {_storage._activeSeconds}
     set {_uniqueStorage()._activeSeconds = newValue}
   }
 
   var restSeconds: Int32 {
-    get {return _storage._restSeconds}
+    get {_storage._restSeconds}
     set {_uniqueStorage()._restSeconds = newValue}
   }
 
   var lowIntensitySeconds: Int32 {
-    get {return _storage._lowIntensitySeconds}
+    get {_storage._lowIntensitySeconds}
     set {_uniqueStorage()._lowIntensitySeconds = newValue}
   }
 
   var moderateIntensitySeconds: Int32 {
-    get {return _storage._moderateIntensitySeconds}
+    get {_storage._moderateIntensitySeconds}
     set {_uniqueStorage()._moderateIntensitySeconds = newValue}
   }
 
   var vigorousIntensitySeconds: Int32 {
-    get {return _storage._vigorousIntensitySeconds}
+    get {_storage._vigorousIntensitySeconds}
     set {_uniqueStorage()._vigorousIntensitySeconds = newValue}
   }
 
   var inactivitySeconds: Int32 {
-    get {return _storage._inactivitySeconds}
+    get {_storage._inactivitySeconds}
     set {_uniqueStorage()._inactivitySeconds = newValue}
   }
 
   var activityLevelGranularData: [ActivityLevelGranularDataProto] {
-    get {return _storage._activityLevelGranularData}
+    get {_storage._activityLevelGranularData}
     set {_uniqueStorage()._activityLevelGranularData = newValue}
   }
 
   var continuousInactivePeriods: Int32 {
-    get {return _storage._continuousInactivePeriods}
+    get {_storage._continuousInactivePeriods}
     set {_uniqueStorage()._continuousInactivePeriods = newValue}
   }
 
   var caloriesNetIntakeKcal: Double {
-    get {return _storage._caloriesNetIntakeKcal}
+    get {_storage._caloriesNetIntakeKcal}
     set {_uniqueStorage()._caloriesNetIntakeKcal = newValue}
   }
 
   var caloriesExpenditureKcal: Double {
-    get {return _storage._caloriesExpenditureKcal}
+    get {_storage._caloriesExpenditureKcal}
     set {_uniqueStorage()._caloriesExpenditureKcal = newValue}
   }
 
   var caloriesNetActiveKcal: Double {
-    get {return _storage._caloriesNetActiveKcal}
+    get {_storage._caloriesNetActiveKcal}
     set {_uniqueStorage()._caloriesNetActiveKcal = newValue}
   }
 
   var caloriesBasalMetabolicRateKcal: Double {
-    get {return _storage._caloriesBasalMetabolicRateKcal}
+    get {_storage._caloriesBasalMetabolicRateKcal}
     set {_uniqueStorage()._caloriesBasalMetabolicRateKcal = newValue}
   }
 
   var steps: Int32 {
-    get {return _storage._steps}
+    get {_storage._steps}
     set {_uniqueStorage()._steps = newValue}
   }
 
   var stepsGranularData: [StepsGranularDataProto] {
-    get {return _storage._stepsGranularData}
+    get {_storage._stepsGranularData}
     set {_uniqueStorage()._stepsGranularData = newValue}
   }
 
   var activeSteps: Int32 {
-    get {return _storage._activeSteps}
+    get {_storage._activeSteps}
     set {_uniqueStorage()._activeSteps = newValue}
   }
 
   var activeStepsGranularData: [ActiveStepsGranularDataProto] {
-    get {return _storage._activeStepsGranularData}
+    get {_storage._activeStepsGranularData}
     set {_uniqueStorage()._activeStepsGranularData = newValue}
   }
 
   var walkedDistanceMeters: Double {
-    get {return _storage._walkedDistanceMeters}
+    get {_storage._walkedDistanceMeters}
     set {_uniqueStorage()._walkedDistanceMeters = newValue}
   }
 
   var traveledDistanceMeters: Double {
-    get {return _storage._traveledDistanceMeters}
+    get {_storage._traveledDistanceMeters}
     set {_uniqueStorage()._traveledDistanceMeters = newValue}
   }
 
   var traveledDistanceGranularData: [TraveledDistanceGranularDataProto] {
-    get {return _storage._traveledDistanceGranularData}
+    get {_storage._traveledDistanceGranularData}
     set {_uniqueStorage()._traveledDistanceGranularData = newValue}
   }
 
   var floorsClimbed: Double {
-    get {return _storage._floorsClimbed}
+    get {_storage._floorsClimbed}
     set {_uniqueStorage()._floorsClimbed = newValue}
   }
 
   var floorsClimbedGranularData: [FloorsClimbedGranularDataProto] {
-    get {return _storage._floorsClimbedGranularData}
+    get {_storage._floorsClimbedGranularData}
     set {_uniqueStorage()._floorsClimbedGranularData = newValue}
   }
 
   var elevationAvgAltitudeMeters: Double {
-    get {return _storage._elevationAvgAltitudeMeters}
+    get {_storage._elevationAvgAltitudeMeters}
     set {_uniqueStorage()._elevationAvgAltitudeMeters = newValue}
   }
 
   var elevationMinimumAltitudeMeters: Double {
-    get {return _storage._elevationMinimumAltitudeMeters}
+    get {_storage._elevationMinimumAltitudeMeters}
     set {_uniqueStorage()._elevationMinimumAltitudeMeters = newValue}
   }
 
   var elevationMaximumAltitudeMeters: Double {
-    get {return _storage._elevationMaximumAltitudeMeters}
+    get {_storage._elevationMaximumAltitudeMeters}
     set {_uniqueStorage()._elevationMaximumAltitudeMeters = newValue}
   }
 
   var elevationLossActualAltitudeMeters: Double {
-    get {return _storage._elevationLossActualAltitudeMeters}
+    get {_storage._elevationLossActualAltitudeMeters}
     set {_uniqueStorage()._elevationLossActualAltitudeMeters = newValue}
   }
 
   var elevationGainActualAltitudeMeters: Double {
-    get {return _storage._elevationGainActualAltitudeMeters}
+    get {_storage._elevationGainActualAltitudeMeters}
     set {_uniqueStorage()._elevationGainActualAltitudeMeters = newValue}
   }
 
   var elevationPlannedGainMeters: Double {
-    get {return _storage._elevationPlannedGainMeters}
+    get {_storage._elevationPlannedGainMeters}
     set {_uniqueStorage()._elevationPlannedGainMeters = newValue}
   }
 
   var elevationGranularData: [ElevationGranularDataProto] {
-    get {return _storage._elevationGranularData}
+    get {_storage._elevationGranularData}
     set {_uniqueStorage()._elevationGranularData = newValue}
   }
 
   var swimmingNumStrokes: Int32 {
-    get {return _storage._swimmingNumStrokes}
+    get {_storage._swimmingNumStrokes}
     set {_uniqueStorage()._swimmingNumStrokes = newValue}
   }
 
   var swimmingNumLaps: Int32 {
-    get {return _storage._swimmingNumLaps}
+    get {_storage._swimmingNumLaps}
     set {_uniqueStorage()._swimmingNumLaps = newValue}
   }
 
   var swimmingPoolLengthMeters: Double {
-    get {return _storage._swimmingPoolLengthMeters}
+    get {_storage._swimmingPoolLengthMeters}
     set {_uniqueStorage()._swimmingPoolLengthMeters = newValue}
   }
 
   var swimmingTotalDistanceMeters: Double {
-    get {return _storage._swimmingTotalDistanceMeters}
+    get {_storage._swimmingTotalDistanceMeters}
     set {_uniqueStorage()._swimmingTotalDistanceMeters = newValue}
   }
 
   var swimmingDistanceGranularData: [SwimmingDistanceGranularDataProto] {
-    get {return _storage._swimmingDistanceGranularData}
+    get {_storage._swimmingDistanceGranularData}
     set {_uniqueStorage()._swimmingDistanceGranularData = newValue}
   }
 
   var hrMaximumBpm: Int32 {
-    get {return _storage._hrMaximumBpm}
+    get {_storage._hrMaximumBpm}
     set {_uniqueStorage()._hrMaximumBpm = newValue}
   }
 
   var hrMinimumBpm: Int32 {
-    get {return _storage._hrMinimumBpm}
+    get {_storage._hrMinimumBpm}
     set {_uniqueStorage()._hrMinimumBpm = newValue}
   }
 
   var hrAvgBpm: Int32 {
-    get {return _storage._hrAvgBpm}
+    get {_storage._hrAvgBpm}
     set {_uniqueStorage()._hrAvgBpm = newValue}
   }
 
   var hrRestingBpm: Int32 {
-    get {return _storage._hrRestingBpm}
+    get {_storage._hrRestingBpm}
     set {_uniqueStorage()._hrRestingBpm = newValue}
   }
 
   var hrGranularData: [HrGranularDataProto] {
-    get {return _storage._hrGranularData}
+    get {_storage._hrGranularData}
     set {_uniqueStorage()._hrGranularData = newValue}
   }
 
   var hrvAvgRmssd: Double {
-    get {return _storage._hrvAvgRmssd}
+    get {_storage._hrvAvgRmssd}
     set {_uniqueStorage()._hrvAvgRmssd = newValue}
   }
 
   var hrvAvgSdnn: Double {
-    get {return _storage._hrvAvgSdnn}
+    get {_storage._hrvAvgSdnn}
     set {_uniqueStorage()._hrvAvgSdnn = newValue}
   }
 
   var hrvSdnnGranularData: [HrvSdnnGranularDataProto] {
-    get {return _storage._hrvSdnnGranularData}
+    get {_storage._hrvSdnnGranularData}
     set {_uniqueStorage()._hrvSdnnGranularData = newValue}
   }
 
   var hrvRmssdGranularData: [HrvRmssdGranularDataProto] {
-    get {return _storage._hrvRmssdGranularData}
+    get {_storage._hrvRmssdGranularData}
     set {_uniqueStorage()._hrvRmssdGranularData = newValue}
   }
 
   var saturationAvgPercentage: Double {
-    get {return _storage._saturationAvgPercentage}
+    get {_storage._saturationAvgPercentage}
     set {_uniqueStorage()._saturationAvgPercentage = newValue}
   }
 
   var saturationGranularData: [SaturationGranularDataProto] {
-    get {return _storage._saturationGranularData}
+    get {_storage._saturationGranularData}
     set {_uniqueStorage()._saturationGranularData = newValue}
   }
 
   var vo2MaxMlPerMinPerKg: Double {
-    get {return _storage._vo2MaxMlPerMinPerKg}
+    get {_storage._vo2MaxMlPerMinPerKg}
     set {_uniqueStorage()._vo2MaxMlPerMinPerKg = newValue}
   }
 
   var vo2GranularData: [Vo2GranularDataProto] {
-    get {return _storage._vo2GranularData}
+    get {_storage._vo2GranularData}
     set {_uniqueStorage()._vo2GranularData = newValue}
   }
 
   var stressAtRestDurationSeconds: Int32 {
-    get {return _storage._stressAtRestDurationSeconds}
+    get {_storage._stressAtRestDurationSeconds}
     set {_uniqueStorage()._stressAtRestDurationSeconds = newValue}
   }
 
   var stressDurationSeconds: Int32 {
-    get {return _storage._stressDurationSeconds}
+    get {_storage._stressDurationSeconds}
     set {_uniqueStorage()._stressDurationSeconds = newValue}
   }
 
   var lowStressDurationSeconds: Int32 {
-    get {return _storage._lowStressDurationSeconds}
+    get {_storage._lowStressDurationSeconds}
     set {_uniqueStorage()._lowStressDurationSeconds = newValue}
   }
 
   var mediumStressDurationSeconds: Int32 {
-    get {return _storage._mediumStressDurationSeconds}
+    get {_storage._mediumStressDurationSeconds}
     set {_uniqueStorage()._mediumStressDurationSeconds = newValue}
   }
 
   var highStressDurationSeconds: Int32 {
-    get {return _storage._highStressDurationSeconds}
+    get {_storage._highStressDurationSeconds}
     set {_uniqueStorage()._highStressDurationSeconds = newValue}
   }
 
   var stressGranularData: [StressGranularDataProto] {
-    get {return _storage._stressGranularData}
+    get {_storage._stressGranularData}
     set {_uniqueStorage()._stressGranularData = newValue}
   }
 
   var stressAvgLevel: Int32 {
-    get {return _storage._stressAvgLevel}
+    get {_storage._stressAvgLevel}
     set {_uniqueStorage()._stressAvgLevel = newValue}
   }
 
   var stressMaximumLevel: Int32 {
-    get {return _storage._stressMaximumLevel}
+    get {_storage._stressMaximumLevel}
     set {_uniqueStorage()._stressMaximumLevel = newValue}
   }
 
@@ -1450,7 +1450,7 @@ struct PhysicalSummaryProto: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct PhysicalSummaryResultProto: Sendable {
+nonisolated struct PhysicalSummaryResultProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1475,7 +1475,7 @@ struct PhysicalSummaryResultProto: Sendable {
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_Result: Equatable, Sendable {
+  nonisolated enum OneOf_Result: Equatable, Sendable {
     case success(PhysicalSummaryProto)
     case failure(SDKExceptionProto)
 
@@ -1484,313 +1484,313 @@ struct PhysicalSummaryResultProto: Sendable {
   init() {}
 }
 
-struct BodySummaryProto: @unchecked Sendable {
+nonisolated struct BodySummaryProto: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var dateTime: String {
-    get {return _storage._dateTime}
+    get {_storage._dateTime}
     set {_uniqueStorage()._dateTime = newValue}
   }
 
   var sourceOfData: String {
-    get {return _storage._sourceOfData}
+    get {_storage._sourceOfData}
     set {_uniqueStorage()._sourceOfData = newValue}
   }
 
   var wasTheUserUnderPhysicalActivity: Bool {
-    get {return _storage._wasTheUserUnderPhysicalActivity}
+    get {_storage._wasTheUserUnderPhysicalActivity}
     set {_uniqueStorage()._wasTheUserUnderPhysicalActivity = newValue}
   }
 
   var waistCircumferenceCm: Double {
-    get {return _storage._waistCircumferenceCm}
+    get {_storage._waistCircumferenceCm}
     set {_uniqueStorage()._waistCircumferenceCm = newValue}
   }
 
   var hipCircumferenceCm: Double {
-    get {return _storage._hipCircumferenceCm}
+    get {_storage._hipCircumferenceCm}
     set {_uniqueStorage()._hipCircumferenceCm = newValue}
   }
 
   var chestCircumferenceCm: Double {
-    get {return _storage._chestCircumferenceCm}
+    get {_storage._chestCircumferenceCm}
     set {_uniqueStorage()._chestCircumferenceCm = newValue}
   }
 
   var boneCompositionPercentage: Double {
-    get {return _storage._boneCompositionPercentage}
+    get {_storage._boneCompositionPercentage}
     set {_uniqueStorage()._boneCompositionPercentage = newValue}
   }
 
   var muscleCompositionPercentage: Double {
-    get {return _storage._muscleCompositionPercentage}
+    get {_storage._muscleCompositionPercentage}
     set {_uniqueStorage()._muscleCompositionPercentage = newValue}
   }
 
   var waterCompositionPercentage: Double {
-    get {return _storage._waterCompositionPercentage}
+    get {_storage._waterCompositionPercentage}
     set {_uniqueStorage()._waterCompositionPercentage = newValue}
   }
 
   var weightKg: Double {
-    get {return _storage._weightKg}
+    get {_storage._weightKg}
     set {_uniqueStorage()._weightKg = newValue}
   }
 
   var heightCm: Double {
-    get {return _storage._heightCm}
+    get {_storage._heightCm}
     set {_uniqueStorage()._heightCm = newValue}
   }
 
   var bmi: Double {
-    get {return _storage._bmi}
+    get {_storage._bmi}
     set {_uniqueStorage()._bmi = newValue}
   }
 
   var bloodGlucoseAvgMgPerDl: Double {
-    get {return _storage._bloodGlucoseAvgMgPerDl}
+    get {_storage._bloodGlucoseAvgMgPerDl}
     set {_uniqueStorage()._bloodGlucoseAvgMgPerDl = newValue}
   }
 
   var bloodGlucoseGranularData: [BloodGlucoseGranularDataProto] {
-    get {return _storage._bloodGlucoseGranularData}
+    get {_storage._bloodGlucoseGranularData}
     set {_uniqueStorage()._bloodGlucoseGranularData = newValue}
   }
 
   var bloodPressureAvg: [BloodPressureObjectProto] {
-    get {return _storage._bloodPressureAvg}
+    get {_storage._bloodPressureAvg}
     set {_uniqueStorage()._bloodPressureAvg = newValue}
   }
 
   var bloodPressureGranularData: [BloodPressureGranularDataProto] {
-    get {return _storage._bloodPressureGranularData}
+    get {_storage._bloodPressureGranularData}
     set {_uniqueStorage()._bloodPressureGranularData = newValue}
   }
 
   var waterTotalConsumptionMl: Double {
-    get {return _storage._waterTotalConsumptionMl}
+    get {_storage._waterTotalConsumptionMl}
     set {_uniqueStorage()._waterTotalConsumptionMl = newValue}
   }
 
   var hydrationAmountGranularData: [HydrationAmountGranularDataProto] {
-    get {return _storage._hydrationAmountGranularData}
+    get {_storage._hydrationAmountGranularData}
     set {_uniqueStorage()._hydrationAmountGranularData = newValue}
   }
 
   var hydrationLevelGranularData: [HydrationLevelGranularDataProto] {
-    get {return _storage._hydrationLevelGranularData}
+    get {_storage._hydrationLevelGranularData}
     set {_uniqueStorage()._hydrationLevelGranularData = newValue}
   }
 
   var hrMaximumBpm: Int32 {
-    get {return _storage._hrMaximumBpm}
+    get {_storage._hrMaximumBpm}
     set {_uniqueStorage()._hrMaximumBpm = newValue}
   }
 
   var hrMinimumBpm: Int32 {
-    get {return _storage._hrMinimumBpm}
+    get {_storage._hrMinimumBpm}
     set {_uniqueStorage()._hrMinimumBpm = newValue}
   }
 
   var hrAvgBpm: Int32 {
-    get {return _storage._hrAvgBpm}
+    get {_storage._hrAvgBpm}
     set {_uniqueStorage()._hrAvgBpm = newValue}
   }
 
   var hrRestingBpm: Int32 {
-    get {return _storage._hrRestingBpm}
+    get {_storage._hrRestingBpm}
     set {_uniqueStorage()._hrRestingBpm = newValue}
   }
 
   var hrGranularData: [HrGranularDataProto] {
-    get {return _storage._hrGranularData}
+    get {_storage._hrGranularData}
     set {_uniqueStorage()._hrGranularData = newValue}
   }
 
   var hrvAvgRmssd: Double {
-    get {return _storage._hrvAvgRmssd}
+    get {_storage._hrvAvgRmssd}
     set {_uniqueStorage()._hrvAvgRmssd = newValue}
   }
 
   var hrvAvgSdnn: Double {
-    get {return _storage._hrvAvgSdnn}
+    get {_storage._hrvAvgSdnn}
     set {_uniqueStorage()._hrvAvgSdnn = newValue}
   }
 
   var hrvSdnnGranularData: [HrvSdnnGranularDataProto] {
-    get {return _storage._hrvSdnnGranularData}
+    get {_storage._hrvSdnnGranularData}
     set {_uniqueStorage()._hrvSdnnGranularData = newValue}
   }
 
   var hrvRmssdGranularData: [HrvRmssdGranularDataProto] {
-    get {return _storage._hrvRmssdGranularData}
+    get {_storage._hrvRmssdGranularData}
     set {_uniqueStorage()._hrvRmssdGranularData = newValue}
   }
 
   var moodMinimumScale: Double {
-    get {return _storage._moodMinimumScale}
+    get {_storage._moodMinimumScale}
     set {_uniqueStorage()._moodMinimumScale = newValue}
   }
 
   var moodAvgScale: Double {
-    get {return _storage._moodAvgScale}
+    get {_storage._moodAvgScale}
     set {_uniqueStorage()._moodAvgScale = newValue}
   }
 
   var moodMaximumScale: Double {
-    get {return _storage._moodMaximumScale}
+    get {_storage._moodMaximumScale}
     set {_uniqueStorage()._moodMaximumScale = newValue}
   }
 
   var moodGranularData: [MoodGranularDataProto] {
-    get {return _storage._moodGranularData}
+    get {_storage._moodGranularData}
     set {_uniqueStorage()._moodGranularData = newValue}
   }
 
   var moodDeltaScale: Double {
-    get {return _storage._moodDeltaScale}
+    get {_storage._moodDeltaScale}
     set {_uniqueStorage()._moodDeltaScale = newValue}
   }
 
   var foodIntake: Double {
-    get {return _storage._foodIntake}
+    get {_storage._foodIntake}
     set {_uniqueStorage()._foodIntake = newValue}
   }
 
   var caloriesIntakeKcal: Double {
-    get {return _storage._caloriesIntakeKcal}
+    get {_storage._caloriesIntakeKcal}
     set {_uniqueStorage()._caloriesIntakeKcal = newValue}
   }
 
   var proteinIntakeG: Double {
-    get {return _storage._proteinIntakeG}
+    get {_storage._proteinIntakeG}
     set {_uniqueStorage()._proteinIntakeG = newValue}
   }
 
   var sugarIntakeG: Double {
-    get {return _storage._sugarIntakeG}
+    get {_storage._sugarIntakeG}
     set {_uniqueStorage()._sugarIntakeG = newValue}
   }
 
   var fatIntakeG: Double {
-    get {return _storage._fatIntakeG}
+    get {_storage._fatIntakeG}
     set {_uniqueStorage()._fatIntakeG = newValue}
   }
 
   var transFatIntakeG: Double {
-    get {return _storage._transFatIntakeG}
+    get {_storage._transFatIntakeG}
     set {_uniqueStorage()._transFatIntakeG = newValue}
   }
 
   var carbohydratesIntakeG: Double {
-    get {return _storage._carbohydratesIntakeG}
+    get {_storage._carbohydratesIntakeG}
     set {_uniqueStorage()._carbohydratesIntakeG = newValue}
   }
 
   var fiberIntakeG: Double {
-    get {return _storage._fiberIntakeG}
+    get {_storage._fiberIntakeG}
     set {_uniqueStorage()._fiberIntakeG = newValue}
   }
 
   var alcoholIntakeG: Double {
-    get {return _storage._alcoholIntakeG}
+    get {_storage._alcoholIntakeG}
     set {_uniqueStorage()._alcoholIntakeG = newValue}
   }
 
   var sodiumIntakeMg: Double {
-    get {return _storage._sodiumIntakeMg}
+    get {_storage._sodiumIntakeMg}
     set {_uniqueStorage()._sodiumIntakeMg = newValue}
   }
 
   var cholesterolIntakeMg: Double {
-    get {return _storage._cholesterolIntakeMg}
+    get {_storage._cholesterolIntakeMg}
     set {_uniqueStorage()._cholesterolIntakeMg = newValue}
   }
 
   var saturationAvgPercentage: Double {
-    get {return _storage._saturationAvgPercentage}
+    get {_storage._saturationAvgPercentage}
     set {_uniqueStorage()._saturationAvgPercentage = newValue}
   }
 
   var saturationGranularData: [SaturationGranularDataProto] {
-    get {return _storage._saturationGranularData}
+    get {_storage._saturationGranularData}
     set {_uniqueStorage()._saturationGranularData = newValue}
   }
 
   var vo2MaxMlPerMinPerKg: Double {
-    get {return _storage._vo2MaxMlPerMinPerKg}
+    get {_storage._vo2MaxMlPerMinPerKg}
     set {_uniqueStorage()._vo2MaxMlPerMinPerKg = newValue}
   }
 
   var vo2GranularData: [Vo2GranularDataProto] {
-    get {return _storage._vo2GranularData}
+    get {_storage._vo2GranularData}
     set {_uniqueStorage()._vo2GranularData = newValue}
   }
 
   var temperatureMinimum: [TemperatureObjectProto] {
-    get {return _storage._temperatureMinimum}
+    get {_storage._temperatureMinimum}
     set {_uniqueStorage()._temperatureMinimum = newValue}
   }
 
   var temperatureAvg: [TemperatureObjectProto] {
-    get {return _storage._temperatureAvg}
+    get {_storage._temperatureAvg}
     set {_uniqueStorage()._temperatureAvg = newValue}
   }
 
   var temperatureMaximum: [TemperatureObjectProto] {
-    get {return _storage._temperatureMaximum}
+    get {_storage._temperatureMaximum}
     set {_uniqueStorage()._temperatureMaximum = newValue}
   }
 
   var temperatureGranularData: [TemperatureGranularDataProto] {
-    get {return _storage._temperatureGranularData}
+    get {_storage._temperatureGranularData}
     set {_uniqueStorage()._temperatureGranularData = newValue}
   }
 
   var temperatureDelta: [TemperatureObjectProto] {
-    get {return _storage._temperatureDelta}
+    get {_storage._temperatureDelta}
     set {_uniqueStorage()._temperatureDelta = newValue}
   }
 
   var lastUpdatedDatetime: String {
-    get {return _storage._lastUpdatedDatetime}
+    get {_storage._lastUpdatedDatetime}
     set {_uniqueStorage()._lastUpdatedDatetime = newValue}
   }
 
   var periodStartDate: String {
-    get {return _storage._periodStartDate}
+    get {_storage._periodStartDate}
     set {_uniqueStorage()._periodStartDate = newValue}
   }
 
   var cycleDay: Int32 {
-    get {return _storage._cycleDay}
+    get {_storage._cycleDay}
     set {_uniqueStorage()._cycleDay = newValue}
   }
 
   var cycleLengthDays: Int32 {
-    get {return _storage._cycleLengthDays}
+    get {_storage._cycleLengthDays}
     set {_uniqueStorage()._cycleLengthDays = newValue}
   }
 
   var predictedCycleLengthDays: Int32 {
-    get {return _storage._predictedCycleLengthDays}
+    get {_storage._predictedCycleLengthDays}
     set {_uniqueStorage()._predictedCycleLengthDays = newValue}
   }
 
   var currentPhase: String {
-    get {return _storage._currentPhase}
+    get {_storage._currentPhase}
     set {_uniqueStorage()._currentPhase = newValue}
   }
 
   var lengthOfCurrentPhaseDays: Int32 {
-    get {return _storage._lengthOfCurrentPhaseDays}
+    get {_storage._lengthOfCurrentPhaseDays}
     set {_uniqueStorage()._lengthOfCurrentPhaseDays = newValue}
   }
 
   var daysUntilNextPhase: Int32 {
-    get {return _storage._daysUntilNextPhase}
+    get {_storage._daysUntilNextPhase}
     set {_uniqueStorage()._daysUntilNextPhase = newValue}
   }
 
@@ -1816,13 +1816,13 @@ struct BodySummaryProto: @unchecked Sendable {
   }
 
   var menstruationFlowGranularData: [MenstruationFlowGranularDataProto] {
-    get {return _storage._menstruationFlowGranularData}
+    get {_storage._menstruationFlowGranularData}
     set {_uniqueStorage()._menstruationFlowGranularData = newValue}
   }
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_IsApredictedCycle: Equatable, Sendable {
+  nonisolated enum OneOf_IsApredictedCycle: Equatable, Sendable {
     case isApredictedCycleValue(Bool)
     case isApredictedCycleUnknown(Bool)
 
@@ -1833,7 +1833,7 @@ struct BodySummaryProto: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct BodySummaryResultProto: Sendable {
+nonisolated struct BodySummaryResultProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1858,7 +1858,7 @@ struct BodySummaryResultProto: Sendable {
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_Result: Equatable, Sendable {
+  nonisolated enum OneOf_Result: Equatable, Sendable {
     case success(BodySummaryProto)
     case failure(SDKExceptionProto)
 
@@ -1867,453 +1867,453 @@ struct BodySummaryResultProto: Sendable {
   init() {}
 }
 
-struct ActivityEventProto: @unchecked Sendable {
+nonisolated struct ActivityEventProto: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   var dateTime: String {
-    get {return _storage._dateTime}
+    get {_storage._dateTime}
     set {_uniqueStorage()._dateTime = newValue}
   }
 
   var sourceOfData: String {
-    get {return _storage._sourceOfData}
+    get {_storage._sourceOfData}
     set {_uniqueStorage()._sourceOfData = newValue}
   }
 
   var wasTheUserUnderPhysicalActivity: Bool {
-    get {return _storage._wasTheUserUnderPhysicalActivity}
+    get {_storage._wasTheUserUnderPhysicalActivity}
     set {_uniqueStorage()._wasTheUserUnderPhysicalActivity = newValue}
   }
 
   var activityStartDateTime: String {
-    get {return _storage._activityStartDateTime}
+    get {_storage._activityStartDateTime}
     set {_uniqueStorage()._activityStartDateTime = newValue}
   }
 
   var activityEndDateTime: String {
-    get {return _storage._activityEndDateTime}
+    get {_storage._activityEndDateTime}
     set {_uniqueStorage()._activityEndDateTime = newValue}
   }
 
   var activityDurationSeconds: Int32 {
-    get {return _storage._activityDurationSeconds}
+    get {_storage._activityDurationSeconds}
     set {_uniqueStorage()._activityDurationSeconds = newValue}
   }
 
   var activityTypeName: String {
-    get {return _storage._activityTypeName}
+    get {_storage._activityTypeName}
     set {_uniqueStorage()._activityTypeName = newValue}
   }
 
   var activeSeconds: Int32 {
-    get {return _storage._activeSeconds}
+    get {_storage._activeSeconds}
     set {_uniqueStorage()._activeSeconds = newValue}
   }
 
   var restSeconds: Int32 {
-    get {return _storage._restSeconds}
+    get {_storage._restSeconds}
     set {_uniqueStorage()._restSeconds = newValue}
   }
 
   var lowIntensitySeconds: Int32 {
-    get {return _storage._lowIntensitySeconds}
+    get {_storage._lowIntensitySeconds}
     set {_uniqueStorage()._lowIntensitySeconds = newValue}
   }
 
   var moderateIntensitySeconds: Int32 {
-    get {return _storage._moderateIntensitySeconds}
+    get {_storage._moderateIntensitySeconds}
     set {_uniqueStorage()._moderateIntensitySeconds = newValue}
   }
 
   var vigorousIntensitySeconds: Int32 {
-    get {return _storage._vigorousIntensitySeconds}
+    get {_storage._vigorousIntensitySeconds}
     set {_uniqueStorage()._vigorousIntensitySeconds = newValue}
   }
 
   var inactivitySeconds: Int32 {
-    get {return _storage._inactivitySeconds}
+    get {_storage._inactivitySeconds}
     set {_uniqueStorage()._inactivitySeconds = newValue}
   }
 
   var activityLevelGranularData: [ActivityLevelGranularDataProto] {
-    get {return _storage._activityLevelGranularData}
+    get {_storage._activityLevelGranularData}
     set {_uniqueStorage()._activityLevelGranularData = newValue}
   }
 
   var continuousInactivePeriods: Int32 {
-    get {return _storage._continuousInactivePeriods}
+    get {_storage._continuousInactivePeriods}
     set {_uniqueStorage()._continuousInactivePeriods = newValue}
   }
 
   var activityStrainLevel: Int32 {
-    get {return _storage._activityStrainLevel}
+    get {_storage._activityStrainLevel}
     set {_uniqueStorage()._activityStrainLevel = newValue}
   }
 
   var activityWorkKilojoules: Double {
-    get {return _storage._activityWorkKilojoules}
+    get {_storage._activityWorkKilojoules}
     set {_uniqueStorage()._activityWorkKilojoules = newValue}
   }
 
   var activityEnergyKilojoules: Double {
-    get {return _storage._activityEnergyKilojoules}
+    get {_storage._activityEnergyKilojoules}
     set {_uniqueStorage()._activityEnergyKilojoules = newValue}
   }
 
   var activityEnergyPlannedKilojoules: Double {
-    get {return _storage._activityEnergyPlannedKilojoules}
+    get {_storage._activityEnergyPlannedKilojoules}
     set {_uniqueStorage()._activityEnergyPlannedKilojoules = newValue}
   }
 
   var caloriesNetIntakeKcal: Double {
-    get {return _storage._caloriesNetIntakeKcal}
+    get {_storage._caloriesNetIntakeKcal}
     set {_uniqueStorage()._caloriesNetIntakeKcal = newValue}
   }
 
   var caloriesExpenditureKcal: Double {
-    get {return _storage._caloriesExpenditureKcal}
+    get {_storage._caloriesExpenditureKcal}
     set {_uniqueStorage()._caloriesExpenditureKcal = newValue}
   }
 
   var caloriesNetActiveKcal: Double {
-    get {return _storage._caloriesNetActiveKcal}
+    get {_storage._caloriesNetActiveKcal}
     set {_uniqueStorage()._caloriesNetActiveKcal = newValue}
   }
 
   var caloriesBasalMetabolicRateKcal: Double {
-    get {return _storage._caloriesBasalMetabolicRateKcal}
+    get {_storage._caloriesBasalMetabolicRateKcal}
     set {_uniqueStorage()._caloriesBasalMetabolicRateKcal = newValue}
   }
 
   var fatPercentageOfCalories: Double {
-    get {return _storage._fatPercentageOfCalories}
+    get {_storage._fatPercentageOfCalories}
     set {_uniqueStorage()._fatPercentageOfCalories = newValue}
   }
 
   var carbohydratePercentageOfCalories: Double {
-    get {return _storage._carbohydratePercentageOfCalories}
+    get {_storage._carbohydratePercentageOfCalories}
     set {_uniqueStorage()._carbohydratePercentageOfCalories = newValue}
   }
 
   var proteinPercentageOfCalories: Double {
-    get {return _storage._proteinPercentageOfCalories}
+    get {_storage._proteinPercentageOfCalories}
     set {_uniqueStorage()._proteinPercentageOfCalories = newValue}
   }
 
   var steps: Int32 {
-    get {return _storage._steps}
+    get {_storage._steps}
     set {_uniqueStorage()._steps = newValue}
   }
 
   var stepsGranularData: [StepsGranularDataProto] {
-    get {return _storage._stepsGranularData}
+    get {_storage._stepsGranularData}
     set {_uniqueStorage()._stepsGranularData = newValue}
   }
 
   var walkedDistanceMeters: Double {
-    get {return _storage._walkedDistanceMeters}
+    get {_storage._walkedDistanceMeters}
     set {_uniqueStorage()._walkedDistanceMeters = newValue}
   }
 
   var traveledDistanceMeters: Double {
-    get {return _storage._traveledDistanceMeters}
+    get {_storage._traveledDistanceMeters}
     set {_uniqueStorage()._traveledDistanceMeters = newValue}
   }
 
   var traveledDistanceGranularData: [TraveledDistanceGranularDataProto] {
-    get {return _storage._traveledDistanceGranularData}
+    get {_storage._traveledDistanceGranularData}
     set {_uniqueStorage()._traveledDistanceGranularData = newValue}
   }
 
   var floorsClimbed: Double {
-    get {return _storage._floorsClimbed}
+    get {_storage._floorsClimbed}
     set {_uniqueStorage()._floorsClimbed = newValue}
   }
 
   var floorsClimbedGranularData: [FloorsClimbedGranularDataProto] {
-    get {return _storage._floorsClimbedGranularData}
+    get {_storage._floorsClimbedGranularData}
     set {_uniqueStorage()._floorsClimbedGranularData = newValue}
   }
 
   var elevationAvgAltitudeMeters: Double {
-    get {return _storage._elevationAvgAltitudeMeters}
+    get {_storage._elevationAvgAltitudeMeters}
     set {_uniqueStorage()._elevationAvgAltitudeMeters = newValue}
   }
 
   var elevationMinimumAltitudeMeters: Double {
-    get {return _storage._elevationMinimumAltitudeMeters}
+    get {_storage._elevationMinimumAltitudeMeters}
     set {_uniqueStorage()._elevationMinimumAltitudeMeters = newValue}
   }
 
   var elevationMaximumAltitudeMeters: Double {
-    get {return _storage._elevationMaximumAltitudeMeters}
+    get {_storage._elevationMaximumAltitudeMeters}
     set {_uniqueStorage()._elevationMaximumAltitudeMeters = newValue}
   }
 
   var elevationLossActualAltitudeMeters: Double {
-    get {return _storage._elevationLossActualAltitudeMeters}
+    get {_storage._elevationLossActualAltitudeMeters}
     set {_uniqueStorage()._elevationLossActualAltitudeMeters = newValue}
   }
 
   var elevationGainActualAltitudeMeters: Double {
-    get {return _storage._elevationGainActualAltitudeMeters}
+    get {_storage._elevationGainActualAltitudeMeters}
     set {_uniqueStorage()._elevationGainActualAltitudeMeters = newValue}
   }
 
   var elevationPlannedGainMeters: Double {
-    get {return _storage._elevationPlannedGainMeters}
+    get {_storage._elevationPlannedGainMeters}
     set {_uniqueStorage()._elevationPlannedGainMeters = newValue}
   }
 
   var elevationGranularData: [ElevationGranularDataProto] {
-    get {return _storage._elevationGranularData}
+    get {_storage._elevationGranularData}
     set {_uniqueStorage()._elevationGranularData = newValue}
   }
 
   var swimmingNumStrokes: Int32 {
-    get {return _storage._swimmingNumStrokes}
+    get {_storage._swimmingNumStrokes}
     set {_uniqueStorage()._swimmingNumStrokes = newValue}
   }
 
   var swimmingNumLaps: Int32 {
-    get {return _storage._swimmingNumLaps}
+    get {_storage._swimmingNumLaps}
     set {_uniqueStorage()._swimmingNumLaps = newValue}
   }
 
   var swimmingPoolLengthMeters: Double {
-    get {return _storage._swimmingPoolLengthMeters}
+    get {_storage._swimmingPoolLengthMeters}
     set {_uniqueStorage()._swimmingPoolLengthMeters = newValue}
   }
 
   var swimmingTotalDistanceMeters: Double {
-    get {return _storage._swimmingTotalDistanceMeters}
+    get {_storage._swimmingTotalDistanceMeters}
     set {_uniqueStorage()._swimmingTotalDistanceMeters = newValue}
   }
 
   var swimmingDistanceGranularData: [SwimmingDistanceGranularDataProto] {
-    get {return _storage._swimmingDistanceGranularData}
+    get {_storage._swimmingDistanceGranularData}
     set {_uniqueStorage()._swimmingDistanceGranularData = newValue}
   }
 
   var hrMaximumBpm: Int32 {
-    get {return _storage._hrMaximumBpm}
+    get {_storage._hrMaximumBpm}
     set {_uniqueStorage()._hrMaximumBpm = newValue}
   }
 
   var hrMinimumBpm: Int32 {
-    get {return _storage._hrMinimumBpm}
+    get {_storage._hrMinimumBpm}
     set {_uniqueStorage()._hrMinimumBpm = newValue}
   }
 
   var hrAvgBpm: Int32 {
-    get {return _storage._hrAvgBpm}
+    get {_storage._hrAvgBpm}
     set {_uniqueStorage()._hrAvgBpm = newValue}
   }
 
   var hrRestingBpm: Int32 {
-    get {return _storage._hrRestingBpm}
+    get {_storage._hrRestingBpm}
     set {_uniqueStorage()._hrRestingBpm = newValue}
   }
 
   var hrGranularData: [HrGranularDataProto] {
-    get {return _storage._hrGranularData}
+    get {_storage._hrGranularData}
     set {_uniqueStorage()._hrGranularData = newValue}
   }
 
   var hrvAvgRmssd: Double {
-    get {return _storage._hrvAvgRmssd}
+    get {_storage._hrvAvgRmssd}
     set {_uniqueStorage()._hrvAvgRmssd = newValue}
   }
 
   var hrvAvgSdnn: Double {
-    get {return _storage._hrvAvgSdnn}
+    get {_storage._hrvAvgSdnn}
     set {_uniqueStorage()._hrvAvgSdnn = newValue}
   }
 
   var hrvSdnnGranularData: [HrvSdnnGranularDataProto] {
-    get {return _storage._hrvSdnnGranularData}
+    get {_storage._hrvSdnnGranularData}
     set {_uniqueStorage()._hrvSdnnGranularData = newValue}
   }
 
   var hrvRmssdGranularData: [HrvRmssdGranularDataProto] {
-    get {return _storage._hrvRmssdGranularData}
+    get {_storage._hrvRmssdGranularData}
     set {_uniqueStorage()._hrvRmssdGranularData = newValue}
   }
 
   var speedNormalizedMetersPerSecond: Double {
-    get {return _storage._speedNormalizedMetersPerSecond}
+    get {_storage._speedNormalizedMetersPerSecond}
     set {_uniqueStorage()._speedNormalizedMetersPerSecond = newValue}
   }
 
   var speedAvgMetersPerSecond: Double {
-    get {return _storage._speedAvgMetersPerSecond}
+    get {_storage._speedAvgMetersPerSecond}
     set {_uniqueStorage()._speedAvgMetersPerSecond = newValue}
   }
 
   var speedMaximumMetersPerSecond: Double {
-    get {return _storage._speedMaximumMetersPerSecond}
+    get {_storage._speedMaximumMetersPerSecond}
     set {_uniqueStorage()._speedMaximumMetersPerSecond = newValue}
   }
 
   var speedGranularData: [SpeedGranularDataProto] {
-    get {return _storage._speedGranularData}
+    get {_storage._speedGranularData}
     set {_uniqueStorage()._speedGranularData = newValue}
   }
 
   var velocityAvg: [VelocityObjectProto] {
-    get {return _storage._velocityAvg}
+    get {_storage._velocityAvg}
     set {_uniqueStorage()._velocityAvg = newValue}
   }
 
   var velocityMaximum: [VelocityObjectProto] {
-    get {return _storage._velocityMaximum}
+    get {_storage._velocityMaximum}
     set {_uniqueStorage()._velocityMaximum = newValue}
   }
 
   var paceAvgMinPerKm: Double {
-    get {return _storage._paceAvgMinPerKm}
+    get {_storage._paceAvgMinPerKm}
     set {_uniqueStorage()._paceAvgMinPerKm = newValue}
   }
 
   var paceMaximumMinPerKm: Double {
-    get {return _storage._paceMaximumMinPerKm}
+    get {_storage._paceMaximumMinPerKm}
     set {_uniqueStorage()._paceMaximumMinPerKm = newValue}
   }
 
   var cadenceAvgRpm: Double {
-    get {return _storage._cadenceAvgRpm}
+    get {_storage._cadenceAvgRpm}
     set {_uniqueStorage()._cadenceAvgRpm = newValue}
   }
 
   var cadenceMaximumRpm: Double {
-    get {return _storage._cadenceMaximumRpm}
+    get {_storage._cadenceMaximumRpm}
     set {_uniqueStorage()._cadenceMaximumRpm = newValue}
   }
 
   var cadenceGranularData: [CadenceGranularDataProto] {
-    get {return _storage._cadenceGranularData}
+    get {_storage._cadenceGranularData}
     set {_uniqueStorage()._cadenceGranularData = newValue}
   }
 
   var torqueAvgNewtonMeters: Double {
-    get {return _storage._torqueAvgNewtonMeters}
+    get {_storage._torqueAvgNewtonMeters}
     set {_uniqueStorage()._torqueAvgNewtonMeters = newValue}
   }
 
   var torqueMaximumNewtonMeters: Double {
-    get {return _storage._torqueMaximumNewtonMeters}
+    get {_storage._torqueMaximumNewtonMeters}
     set {_uniqueStorage()._torqueMaximumNewtonMeters = newValue}
   }
 
   var torqueGranularData: [TorqueGranularDataProto] {
-    get {return _storage._torqueGranularData}
+    get {_storage._torqueGranularData}
     set {_uniqueStorage()._torqueGranularData = newValue}
   }
 
   var lapGranularData: [LapGranularDataProto] {
-    get {return _storage._lapGranularData}
+    get {_storage._lapGranularData}
     set {_uniqueStorage()._lapGranularData = newValue}
   }
 
   var saturationAvgPercentage: Double {
-    get {return _storage._saturationAvgPercentage}
+    get {_storage._saturationAvgPercentage}
     set {_uniqueStorage()._saturationAvgPercentage = newValue}
   }
 
   var saturationGranularData: [SaturationGranularDataProto] {
-    get {return _storage._saturationGranularData}
+    get {_storage._saturationGranularData}
     set {_uniqueStorage()._saturationGranularData = newValue}
   }
 
   var vo2MaxMlPerMinPerKg: Double {
-    get {return _storage._vo2MaxMlPerMinPerKg}
+    get {_storage._vo2MaxMlPerMinPerKg}
     set {_uniqueStorage()._vo2MaxMlPerMinPerKg = newValue}
   }
 
   var vo2GranularData: [Vo2GranularDataProto] {
-    get {return _storage._vo2GranularData}
+    get {_storage._vo2GranularData}
     set {_uniqueStorage()._vo2GranularData = newValue}
   }
 
   var positionStart: [PositionObjectProto] {
-    get {return _storage._positionStart}
+    get {_storage._positionStart}
     set {_uniqueStorage()._positionStart = newValue}
   }
 
   var positionCentroid: [PositionObjectProto] {
-    get {return _storage._positionCentroid}
+    get {_storage._positionCentroid}
     set {_uniqueStorage()._positionCentroid = newValue}
   }
 
   var positionEnd: [PositionObjectProto] {
-    get {return _storage._positionEnd}
+    get {_storage._positionEnd}
     set {_uniqueStorage()._positionEnd = newValue}
   }
 
   var positionGranularData: [PositionGranularDataProto] {
-    get {return _storage._positionGranularData}
+    get {_storage._positionGranularData}
     set {_uniqueStorage()._positionGranularData = newValue}
   }
 
   var positionPolylineMapDataSummary: String {
-    get {return _storage._positionPolylineMapDataSummary}
+    get {_storage._positionPolylineMapDataSummary}
     set {_uniqueStorage()._positionPolylineMapDataSummary = newValue}
   }
 
   var powerAvgWatts: Double {
-    get {return _storage._powerAvgWatts}
+    get {_storage._powerAvgWatts}
     set {_uniqueStorage()._powerAvgWatts = newValue}
   }
 
   var powerMaximumWatts: Double {
-    get {return _storage._powerMaximumWatts}
+    get {_storage._powerMaximumWatts}
     set {_uniqueStorage()._powerMaximumWatts = newValue}
   }
 
   var powerGranularData: [PowerGranularDataProto] {
-    get {return _storage._powerGranularData}
+    get {_storage._powerGranularData}
     set {_uniqueStorage()._powerGranularData = newValue}
   }
 
   var stressAtRestDurationSeconds: Int32 {
-    get {return _storage._stressAtRestDurationSeconds}
+    get {_storage._stressAtRestDurationSeconds}
     set {_uniqueStorage()._stressAtRestDurationSeconds = newValue}
   }
 
   var stressDurationSeconds: Int32 {
-    get {return _storage._stressDurationSeconds}
+    get {_storage._stressDurationSeconds}
     set {_uniqueStorage()._stressDurationSeconds = newValue}
   }
 
   var lowStressDurationSeconds: Int32 {
-    get {return _storage._lowStressDurationSeconds}
+    get {_storage._lowStressDurationSeconds}
     set {_uniqueStorage()._lowStressDurationSeconds = newValue}
   }
 
   var mediumStressDurationSeconds: Int32 {
-    get {return _storage._mediumStressDurationSeconds}
+    get {_storage._mediumStressDurationSeconds}
     set {_uniqueStorage()._mediumStressDurationSeconds = newValue}
   }
 
   var highStressDurationSeconds: Int32 {
-    get {return _storage._highStressDurationSeconds}
+    get {_storage._highStressDurationSeconds}
     set {_uniqueStorage()._highStressDurationSeconds = newValue}
   }
 
   var tssGranularData: [TssGranularDataProto] {
-    get {return _storage._tssGranularData}
+    get {_storage._tssGranularData}
     set {_uniqueStorage()._tssGranularData = newValue}
   }
 
   var stressAvgLevel: Int32 {
-    get {return _storage._stressAvgLevel}
+    get {_storage._stressAvgLevel}
     set {_uniqueStorage()._stressAvgLevel = newValue}
   }
 
   var stressMaximumLevel: Int32 {
-    get {return _storage._stressMaximumLevel}
+    get {_storage._stressMaximumLevel}
     set {_uniqueStorage()._stressMaximumLevel = newValue}
   }
 
@@ -2324,7 +2324,7 @@ struct ActivityEventProto: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct ActivityEventsProto: Sendable {
+nonisolated struct ActivityEventsProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2336,7 +2336,7 @@ struct ActivityEventsProto: Sendable {
   init() {}
 }
 
-struct ActivityEventResultProto: Sendable {
+nonisolated struct ActivityEventResultProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2361,7 +2361,7 @@ struct ActivityEventResultProto: Sendable {
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_Result: Equatable, Sendable {
+  nonisolated enum OneOf_Result: Equatable, Sendable {
     case success(ActivityEventsProto)
     case failure(SDKExceptionProto)
 
@@ -2370,7 +2370,7 @@ struct ActivityEventResultProto: Sendable {
   init() {}
 }
 
-struct ActiveStepsGranularDataProto: Sendable {
+nonisolated struct ActiveStepsGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2386,7 +2386,7 @@ struct ActiveStepsGranularDataProto: Sendable {
   init() {}
 }
 
-struct ActivityLevelGranularDataProto: Sendable {
+nonisolated struct ActivityLevelGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2400,7 +2400,7 @@ struct ActivityLevelGranularDataProto: Sendable {
   init() {}
 }
 
-struct BloodGlucoseGranularDataProto: Sendable {
+nonisolated struct BloodGlucoseGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2414,7 +2414,7 @@ struct BloodGlucoseGranularDataProto: Sendable {
   init() {}
 }
 
-struct BloodPressureGranularDataProto: Sendable {
+nonisolated struct BloodPressureGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2430,7 +2430,7 @@ struct BloodPressureGranularDataProto: Sendable {
   init() {}
 }
 
-struct BreathingGranularDataProto: Sendable {
+nonisolated struct BreathingGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2444,7 +2444,7 @@ struct BreathingGranularDataProto: Sendable {
   init() {}
 }
 
-struct CadenceGranularDataProto: Sendable {
+nonisolated struct CadenceGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2460,7 +2460,7 @@ struct CadenceGranularDataProto: Sendable {
   init() {}
 }
 
-struct ElevationGranularDataProto: Sendable {
+nonisolated struct ElevationGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2476,7 +2476,7 @@ struct ElevationGranularDataProto: Sendable {
   init() {}
 }
 
-struct FloorsClimbedGranularDataProto: Sendable {
+nonisolated struct FloorsClimbedGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2492,7 +2492,7 @@ struct FloorsClimbedGranularDataProto: Sendable {
   init() {}
 }
 
-struct HrGranularDataProto: Sendable {
+nonisolated struct HrGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2506,7 +2506,7 @@ struct HrGranularDataProto: Sendable {
   init() {}
 }
 
-struct HrvSdnnGranularDataProto: Sendable {
+nonisolated struct HrvSdnnGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2520,7 +2520,7 @@ struct HrvSdnnGranularDataProto: Sendable {
   init() {}
 }
 
-struct MenstruationFlowGranularDataProto: Sendable {
+nonisolated struct MenstruationFlowGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2534,7 +2534,7 @@ struct MenstruationFlowGranularDataProto: Sendable {
   init() {}
 }
 
-struct MoodGranularDataProto: Sendable {
+nonisolated struct MoodGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2550,7 +2550,7 @@ struct MoodGranularDataProto: Sendable {
   init() {}
 }
 
-struct LapGranularDataProto: Sendable {
+nonisolated struct LapGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2566,7 +2566,7 @@ struct LapGranularDataProto: Sendable {
   init() {}
 }
 
-struct PowerGranularDataProto: Sendable {
+nonisolated struct PowerGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2582,7 +2582,7 @@ struct PowerGranularDataProto: Sendable {
   init() {}
 }
 
-struct PositionGranularDataProto: Sendable {
+nonisolated struct PositionGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2600,7 +2600,7 @@ struct PositionGranularDataProto: Sendable {
   init() {}
 }
 
-struct HydrationAmountGranularDataProto: Sendable {
+nonisolated struct HydrationAmountGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2616,7 +2616,7 @@ struct HydrationAmountGranularDataProto: Sendable {
   init() {}
 }
 
-struct SaturationGranularDataProto: Sendable {
+nonisolated struct SaturationGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2630,7 +2630,7 @@ struct SaturationGranularDataProto: Sendable {
   init() {}
 }
 
-struct HydrationLevelGranularDataProto: Sendable {
+nonisolated struct HydrationLevelGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2646,7 +2646,7 @@ struct HydrationLevelGranularDataProto: Sendable {
   init() {}
 }
 
-struct HrvRmssdGranularDataProto: Sendable {
+nonisolated struct HrvRmssdGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2660,7 +2660,7 @@ struct HrvRmssdGranularDataProto: Sendable {
   init() {}
 }
 
-struct SnoringGranularDataProto: Sendable {
+nonisolated struct SnoringGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2676,7 +2676,7 @@ struct SnoringGranularDataProto: Sendable {
   init() {}
 }
 
-struct SpeedGranularDataProto: Sendable {
+nonisolated struct SpeedGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2692,7 +2692,7 @@ struct SpeedGranularDataProto: Sendable {
   init() {}
 }
 
-struct StepsGranularDataProto: Sendable {
+nonisolated struct StepsGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2708,7 +2708,7 @@ struct StepsGranularDataProto: Sendable {
   init() {}
 }
 
-struct StressGranularDataProto: Sendable {
+nonisolated struct StressGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2722,7 +2722,7 @@ struct StressGranularDataProto: Sendable {
   init() {}
 }
 
-struct SwimmingDistanceGranularDataProto: Sendable {
+nonisolated struct SwimmingDistanceGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2738,7 +2738,7 @@ struct SwimmingDistanceGranularDataProto: Sendable {
   init() {}
 }
 
-struct TemperatureGranularDataProto: Sendable {
+nonisolated struct TemperatureGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2754,7 +2754,7 @@ struct TemperatureGranularDataProto: Sendable {
   init() {}
 }
 
-struct TorqueGranularDataProto: Sendable {
+nonisolated struct TorqueGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2770,7 +2770,7 @@ struct TorqueGranularDataProto: Sendable {
   init() {}
 }
 
-struct TraveledDistanceGranularDataProto: Sendable {
+nonisolated struct TraveledDistanceGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2786,7 +2786,7 @@ struct TraveledDistanceGranularDataProto: Sendable {
   init() {}
 }
 
-struct TssGranularDataProto: Sendable {
+nonisolated struct TssGranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2802,7 +2802,7 @@ struct TssGranularDataProto: Sendable {
   init() {}
 }
 
-struct Vo2GranularDataProto: Sendable {
+nonisolated struct Vo2GranularDataProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2816,7 +2816,7 @@ struct Vo2GranularDataProto: Sendable {
   init() {}
 }
 
-struct BloodPressureObjectProto: Sendable {
+nonisolated struct BloodPressureObjectProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2830,7 +2830,7 @@ struct BloodPressureObjectProto: Sendable {
   init() {}
 }
 
-struct PositionObjectProto: Sendable {
+nonisolated struct PositionObjectProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2844,7 +2844,7 @@ struct PositionObjectProto: Sendable {
   init() {}
 }
 
-struct TemperatureObjectProto: Sendable {
+nonisolated struct TemperatureObjectProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2858,7 +2858,7 @@ struct TemperatureObjectProto: Sendable {
   init() {}
 }
 
-struct VelocityObjectProto: Sendable {
+nonisolated struct VelocityObjectProto: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2874,144 +2874,29 @@ struct VelocityObjectProto: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-extension EnvironmentProto: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "SANDBOX"),
-    1: .same(proto: "PRODUCTION"),
-  ]
+nonisolated extension EnvironmentProto: SwiftProtobuf._ProtoNameProviding {
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0SANDBOX\0\u{1}PRODUCTION\0")
 }
 
-extension DiagnosticStatePermissionsProto: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "NOT_REQUESTED"),
-    1: .same(proto: "REQUESTED"),
-    2: .same(proto: "GRANTED"),
-  ]
+nonisolated extension DiagnosticStatePermissionsProto: SwiftProtobuf._ProtoNameProviding {
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0NOT_REQUESTED\0\u{1}REQUESTED\0\u{1}GRANTED\0")
 }
 
-extension AppleHealthPermissionProto: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "APPLE_EXERCISE_TIME"),
-    1: .same(proto: "APPLE_MOVE_TIME"),
-    2: .same(proto: "APPLE_STAND_TIME"),
-    3: .same(proto: "BASAL_ENERGY_BURNED"),
-    4: .same(proto: "ACTIVE_ENERGY_BURNED"),
-    5: .same(proto: "STEP_COUNT"),
-    6: .same(proto: "DISTANCE_CYCLING"),
-    7: .same(proto: "DISTANCE_WALKING_RUNNING"),
-    8: .same(proto: "DISTANCE_SWIMMING"),
-    9: .same(proto: "SWIMMING_STROKE_COUNT"),
-    10: .same(proto: "FLIGHTS_CLIMBED"),
-    11: .same(proto: "WALKING_SPEED"),
-    12: .same(proto: "WALKING_STEP_LENGTH"),
-    13: .same(proto: "RUNNING_POWER"),
-    14: .same(proto: "RUNNING_SPEED"),
-    15: .same(proto: "HEIGHT"),
-    16: .same(proto: "BODY_MASS"),
-    17: .same(proto: "BODY_MASS_INDEX"),
-    18: .same(proto: "WAIST_CIRCUMFERENCE"),
-    19: .same(proto: "BODY_FAT_PERCENTAGE"),
-    20: .same(proto: "BODY_TEMPERATURE"),
-    21: .same(proto: "BASAL_BODY_TEMPERATURE"),
-    22: .same(proto: "APPLE_SLEEPING_WRIST_TEMPERATURE"),
-    23: .same(proto: "HEART_RATE_APPLE"),
-    24: .same(proto: "RESTING_HEART_RATE"),
-    25: .same(proto: "WALKING_HEART_RATE_AVERAGE"),
-    26: .same(proto: "HEART_RATE_VARIABILITY_SDNN"),
-    27: .same(proto: "ELECTROCARDIOGRAM"),
-    28: .same(proto: "WORKOUT"),
-    29: .same(proto: "SLEEP_ANALYSIS"),
-    30: .same(proto: "SLEEP_APNEA_EVENT"),
-    31: .same(proto: "VO_2_MAX"),
-    32: .same(proto: "OXYGEN_SATURATION"),
-    33: .same(proto: "RESPIRATORY_RATE"),
-    34: .same(proto: "UV_EXPOSURE"),
-    35: .same(proto: "BIOLOGICAL_SEX"),
-    36: .same(proto: "DATE_OF_BIRTH"),
-    37: .same(proto: "BLOOD_PRESSURE_SYSTOLIC"),
-    38: .same(proto: "BLOOD_PRESSURE_DIASTOLIC"),
-    39: .same(proto: "BLOOD_GLUCOSE_APPLE"),
-    40: .same(proto: "DIETARY_ENERGY_CONSUMED"),
-    41: .same(proto: "DIETARY_PROTEIN"),
-    42: .same(proto: "DIETARY_SUGAR"),
-    43: .same(proto: "DIETARY_FAT_TOTAL"),
-    44: .same(proto: "DIETARY_CARBOHYDRATES"),
-    45: .same(proto: "DIETARY_FIBER"),
-    46: .same(proto: "DIETARY_SODIUM"),
-    47: .same(proto: "DIETARY_CHOLESTEROL"),
-    48: .same(proto: "STAIR_ASCENT_SPEED"),
-    49: .same(proto: "CYCLING_POWER"),
-    50: .same(proto: "CYCLING_SPEED"),
-    51: .same(proto: "WATER_TEMPERATURE"),
-    52: .same(proto: "WORKOUT_ROUTE"),
-    53: .same(proto: "DIETARY_BIOTIN"),
-    54: .same(proto: "DIETARY_CAFFEINE"),
-    55: .same(proto: "DIETARY_CALCIUM"),
-    56: .same(proto: "DIETARY_CHLORIDE"),
-    57: .same(proto: "DIETARY_CHROMIUM"),
-    58: .same(proto: "DIETARY_COPPER"),
-    59: .same(proto: "DIETARY_FAT_MONOUNSATURATED"),
-    60: .same(proto: "DIETARY_FAT_POLYUNSATURATED"),
-    61: .same(proto: "DIETARY_FAT_SATURATED"),
-    62: .same(proto: "DIETARY_FOLATE"),
-    63: .same(proto: "DIETARY_IODINE"),
-    64: .same(proto: "DIETARY_IRON"),
-    65: .same(proto: "DIETARY_MAGNESIUM"),
-    66: .same(proto: "DIETARY_MANGANESE"),
-    67: .same(proto: "DIETARY_MOLYBDENUM"),
-    68: .same(proto: "DIETARY_NIACIN"),
-    69: .same(proto: "DIETARY_PANTOTHENIC_ACID"),
-    70: .same(proto: "DIETARY_PHOSPHORUS"),
-    71: .same(proto: "DIETARY_POTASSIUM"),
-    72: .same(proto: "DIETARY_RIBOFLAVIN"),
-    73: .same(proto: "DIETARY_SELENIUM"),
-    74: .same(proto: "DIETARY_THIAMIN"),
-    75: .same(proto: "DIETARY_VITAMIN_A"),
-    76: .same(proto: "DIETARY_VITAMIN_B12"),
-    77: .same(proto: "DIETARY_VITAMIN_B6"),
-    78: .same(proto: "DIETARY_VITAMIN_C"),
-    79: .same(proto: "DIETARY_VITAMIN_D"),
-    80: .same(proto: "DIETARY_VITAMIN_E"),
-    81: .same(proto: "DIETARY_VITAMIN_K"),
-    82: .same(proto: "DIETARY_WATER"),
-    83: .same(proto: "DIETARY_ZINC"),
-    84: .same(proto: "ESTIMATED_WORKOUT_EFFORT_SCORE"),
-    85: .same(proto: "PHYSICAL_EFFORT"),
-    86: .same(proto: "WORKOUT_EFFORT_SCORE"),
-  ]
+nonisolated extension AppleHealthPermissionProto: SwiftProtobuf._ProtoNameProviding {
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0APPLE_EXERCISE_TIME\0\u{1}APPLE_MOVE_TIME\0\u{1}APPLE_STAND_TIME\0\u{1}BASAL_ENERGY_BURNED\0\u{1}ACTIVE_ENERGY_BURNED\0\u{1}STEP_COUNT\0\u{1}DISTANCE_CYCLING\0\u{1}DISTANCE_WALKING_RUNNING\0\u{1}DISTANCE_SWIMMING\0\u{1}SWIMMING_STROKE_COUNT\0\u{1}FLIGHTS_CLIMBED\0\u{1}WALKING_SPEED\0\u{1}WALKING_STEP_LENGTH\0\u{1}RUNNING_POWER\0\u{1}RUNNING_SPEED\0\u{1}HEIGHT\0\u{1}BODY_MASS\0\u{1}BODY_MASS_INDEX\0\u{1}WAIST_CIRCUMFERENCE\0\u{1}BODY_FAT_PERCENTAGE\0\u{1}BODY_TEMPERATURE\0\u{1}BASAL_BODY_TEMPERATURE\0\u{1}APPLE_SLEEPING_WRIST_TEMPERATURE\0\u{1}HEART_RATE_APPLE\0\u{1}RESTING_HEART_RATE\0\u{1}WALKING_HEART_RATE_AVERAGE\0\u{1}HEART_RATE_VARIABILITY_SDNN\0\u{1}ELECTROCARDIOGRAM\0\u{1}WORKOUT\0\u{1}SLEEP_ANALYSIS\0\u{1}SLEEP_APNEA_EVENT\0\u{1}VO_2_MAX\0\u{1}OXYGEN_SATURATION\0\u{1}RESPIRATORY_RATE\0\u{1}UV_EXPOSURE\0\u{1}BIOLOGICAL_SEX\0\u{1}DATE_OF_BIRTH\0\u{1}BLOOD_PRESSURE_SYSTOLIC\0\u{1}BLOOD_PRESSURE_DIASTOLIC\0\u{1}BLOOD_GLUCOSE_APPLE\0\u{1}DIETARY_ENERGY_CONSUMED\0\u{1}DIETARY_PROTEIN\0\u{1}DIETARY_SUGAR\0\u{1}DIETARY_FAT_TOTAL\0\u{1}DIETARY_CARBOHYDRATES\0\u{1}DIETARY_FIBER\0\u{1}DIETARY_SODIUM\0\u{1}DIETARY_CHOLESTEROL\0\u{1}STAIR_ASCENT_SPEED\0\u{1}CYCLING_POWER\0\u{1}CYCLING_SPEED\0\u{1}WATER_TEMPERATURE\0\u{1}WORKOUT_ROUTE\0\u{1}DIETARY_BIOTIN\0\u{1}DIETARY_CAFFEINE\0\u{1}DIETARY_CALCIUM\0\u{1}DIETARY_CHLORIDE\0\u{1}DIETARY_CHROMIUM\0\u{1}DIETARY_COPPER\0\u{1}DIETARY_FAT_MONOUNSATURATED\0\u{1}DIETARY_FAT_POLYUNSATURATED\0\u{1}DIETARY_FAT_SATURATED\0\u{1}DIETARY_FOLATE\0\u{1}DIETARY_IODINE\0\u{1}DIETARY_IRON\0\u{1}DIETARY_MAGNESIUM\0\u{1}DIETARY_MANGANESE\0\u{1}DIETARY_MOLYBDENUM\0\u{1}DIETARY_NIACIN\0\u{1}DIETARY_PANTOTHENIC_ACID\0\u{1}DIETARY_PHOSPHORUS\0\u{1}DIETARY_POTASSIUM\0\u{1}DIETARY_RIBOFLAVIN\0\u{1}DIETARY_SELENIUM\0\u{1}DIETARY_THIAMIN\0\u{1}DIETARY_VITAMIN_A\0\u{1}DIETARY_VITAMIN_B12\0\u{1}DIETARY_VITAMIN_B6\0\u{1}DIETARY_VITAMIN_C\0\u{1}DIETARY_VITAMIN_D\0\u{1}DIETARY_VITAMIN_E\0\u{1}DIETARY_VITAMIN_K\0\u{1}DIETARY_WATER\0\u{1}DIETARY_ZINC\0\u{1}ESTIMATED_WORKOUT_EFFORT_SCORE\0\u{1}PHYSICAL_EFFORT\0\u{1}WORKOUT_EFFORT_SCORE\0")
 }
 
-extension SummarySyncTypeProto: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "SLEEP"),
-    1: .same(proto: "PHYSICAL"),
-    2: .same(proto: "BODY"),
-  ]
+nonisolated extension SummarySyncTypeProto: SwiftProtobuf._ProtoNameProviding {
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0SLEEP\0\u{1}PHYSICAL\0\u{1}BODY\0")
 }
 
-extension EventSyncTypeProto: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "ACTIVITY"),
-    1: .same(proto: "BLOOD_GLUCOSE"),
-    2: .same(proto: "BLOOD_PRESSURE"),
-    3: .same(proto: "BODY_METRICS"),
-    4: .same(proto: "HEART_RATE"),
-    5: .same(proto: "HYDRATION"),
-    6: .same(proto: "NUTRITION"),
-    7: .same(proto: "OXYGENATION"),
-    8: .same(proto: "TEMPERATURE"),
-    9: .same(proto: "STEPS"),
-    10: .same(proto: "CALORIES"),
-    11: .same(proto: "ECG"),
-  ]
+nonisolated extension EventSyncTypeProto: SwiftProtobuf._ProtoNameProviding {
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0ACTIVITY\0\u{1}BLOOD_GLUCOSE\0\u{1}BLOOD_PRESSURE\0\u{1}BODY_METRICS\0\u{1}HEART_RATE\0\u{1}HYDRATION\0\u{1}NUTRITION\0\u{1}OXYGENATION\0\u{1}TEMPERATURE\0\u{1}STEPS\0\u{1}CALORIES\0\u{1}ECG\0")
 }
 
-extension SDKExceptionProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension SDKExceptionProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "SDKExceptionProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "code"),
-    2: .same(proto: "message"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}code\0\u{1}message\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3044,12 +2929,9 @@ extension SDKExceptionProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   }
 }
 
-extension BooleanResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension BooleanResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "BooleanResultProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "success"),
-    2: .same(proto: "failure"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}failure\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3109,12 +2991,9 @@ extension BooleanResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   }
 }
 
-extension Int64ResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension Int64ResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "Int64ResultProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "success"),
-    2: .same(proto: "failure"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}failure\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3174,15 +3053,9 @@ extension Int64ResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
   }
 }
 
-extension ConfigurationProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension ConfigurationProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "ConfigurationProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "clientUUID"),
-    2: .same(proto: "secret"),
-    3: .same(proto: "environment"),
-    4: .same(proto: "enableBackgroundSync"),
-    5: .same(proto: "appId"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}clientUUID\0\u{1}secret\0\u{1}environment\0\u{1}enableBackgroundSync\0\u{1}appId\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3230,12 +3103,9 @@ extension ConfigurationProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   }
 }
 
-extension DiagnosticSyncStateProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension DiagnosticSyncStateProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "DiagnosticSyncStateProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "enabled"),
-    2: .same(proto: "lastSync"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}enabled\0\u{1}lastSync\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3268,15 +3138,9 @@ extension DiagnosticSyncStateProto: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension DiagnosticStateProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension DiagnosticStateProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "DiagnosticStateProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "isConfigured"),
-    2: .same(proto: "userIdentified"),
-    3: .same(proto: "permissions"),
-    4: .same(proto: "backgroundSync"),
-    5: .same(proto: "manualSync"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}isConfigured\0\u{1}userIdentified\0\u{1}permissions\0\u{1}backgroundSync\0\u{1}manualSync\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3328,12 +3192,9 @@ extension DiagnosticStateProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension DiagnosticStateResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension DiagnosticStateResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "DiagnosticStateResultProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "success"),
-    2: .same(proto: "failure"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}failure\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3398,12 +3259,9 @@ extension DiagnosticStateResultProto: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension CaloriesProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension CaloriesProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "CaloriesProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "basal"),
-    2: .same(proto: "active"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}basal\0\u{1}active\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3436,12 +3294,9 @@ extension CaloriesProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
   }
 }
 
-extension CaloriesResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension CaloriesResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "CaloriesResultProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "success"),
-    2: .same(proto: "failure"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}failure\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3506,19 +3361,9 @@ extension CaloriesResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension HearRateProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension HearRateProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "HearRateProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "hrMaximumBpm"),
-    2: .same(proto: "hrMinimumBpm"),
-    3: .same(proto: "hrAvgBpm"),
-    4: .same(proto: "hrRestingBpm"),
-    5: .same(proto: "hrGranularData"),
-    6: .same(proto: "hrvAvgRmssd"),
-    7: .same(proto: "hrvAvgSdnn"),
-    8: .same(proto: "hrvSdnnGranularData"),
-    9: .same(proto: "hrvRmssdGranularData"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}hrMaximumBpm\0\u{1}hrMinimumBpm\0\u{1}hrAvgBpm\0\u{1}hrRestingBpm\0\u{1}hrGranularData\0\u{1}hrvAvgRmssd\0\u{1}hrvAvgSdnn\0\u{1}hrvSdnnGranularData\0\u{1}hrvRmssdGranularData\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3586,12 +3431,9 @@ extension HearRateProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
   }
 }
 
-extension HearRateResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension HearRateResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "HearRateResultProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "success"),
-    2: .same(proto: "failure"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}failure\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3656,54 +3498,9 @@ extension HearRateResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension SleepSummaryProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension SleepSummaryProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "SleepSummaryProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "sourceOfData"),
-    3: .same(proto: "wasTheUserUnderPhysicalActivity"),
-    4: .same(proto: "sleepStartDateTime"),
-    5: .same(proto: "sleepEndDateTime"),
-    6: .same(proto: "sleepDate"),
-    7: .same(proto: "sleepDurationSeconds"),
-    8: .same(proto: "timeInBedSeconds"),
-    9: .same(proto: "lightSleepDurationSeconds"),
-    10: .same(proto: "remSleepDurationSeconds"),
-    11: .same(proto: "deepSleepDurationSeconds"),
-    12: .same(proto: "timeToFallAsleepSeconds"),
-    13: .same(proto: "timeAwakeDuringSleepSeconds"),
-    14: .same(proto: "sleepQualityRating1To5Score"),
-    15: .same(proto: "sleepEfficiency1To100Score"),
-    16: .same(proto: "sleepGoalSeconds"),
-    17: .same(proto: "sleepContinuity1To5Score"),
-    18: .same(proto: "sleepContinuity1To5Rating"),
-    19: .same(proto: "hrMaximumBpm"),
-    20: .same(proto: "hrMinimumBpm"),
-    21: .same(proto: "hrAvgBpm"),
-    22: .same(proto: "hrRestingBpm"),
-    23: .same(proto: "hrBasalBpm"),
-    24: .same(proto: "hrGranularData"),
-    25: .same(proto: "hrvAvgRmssd"),
-    26: .same(proto: "hrvAvgSdnn"),
-    27: .same(proto: "hrvSdnnGranularData"),
-    28: .same(proto: "hrvRmssdGranularData"),
-    29: .same(proto: "temperatureMinimum"),
-    30: .same(proto: "temperatureAvg"),
-    31: .same(proto: "temperatureMaximum"),
-    32: .same(proto: "temperatureGranularData"),
-    33: .same(proto: "temperatureDelta"),
-    34: .same(proto: "breathsMinimumPerMin"),
-    35: .same(proto: "breathsAvgPerMin"),
-    36: .same(proto: "breathsMaximumPerMin"),
-    37: .same(proto: "breathingGranularData"),
-    38: .same(proto: "snoringEventsCount"),
-    39: .same(proto: "snoringDurationTotalSeconds"),
-    40: .same(proto: "snoringGranularData"),
-    41: .same(proto: "saturationAvgPercentage"),
-    42: .same(proto: "saturationMinimumPercentage"),
-    43: .same(proto: "saturationMaximumPercentage"),
-    44: .same(proto: "saturationGranularData"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}sourceOfData\0\u{1}wasTheUserUnderPhysicalActivity\0\u{1}sleepStartDateTime\0\u{1}sleepEndDateTime\0\u{1}sleepDate\0\u{1}sleepDurationSeconds\0\u{1}timeInBedSeconds\0\u{1}lightSleepDurationSeconds\0\u{1}remSleepDurationSeconds\0\u{1}deepSleepDurationSeconds\0\u{1}timeToFallAsleepSeconds\0\u{1}timeAwakeDuringSleepSeconds\0\u{1}sleepQualityRating1To5Score\0\u{1}sleepEfficiency1To100Score\0\u{1}sleepGoalSeconds\0\u{1}sleepContinuity1To5Score\0\u{1}sleepContinuity1To5Rating\0\u{1}hrMaximumBpm\0\u{1}hrMinimumBpm\0\u{1}hrAvgBpm\0\u{1}hrRestingBpm\0\u{1}hrBasalBpm\0\u{1}hrGranularData\0\u{1}hrvAvgRmssd\0\u{1}hrvAvgSdnn\0\u{1}hrvSdnnGranularData\0\u{1}hrvRmssdGranularData\0\u{1}temperatureMinimum\0\u{1}temperatureAvg\0\u{1}temperatureMaximum\0\u{1}temperatureGranularData\0\u{1}temperatureDelta\0\u{1}breathsMinimumPerMin\0\u{1}breathsAvgPerMin\0\u{1}breathsMaximumPerMin\0\u{1}breathingGranularData\0\u{1}snoringEventsCount\0\u{1}snoringDurationTotalSeconds\0\u{1}snoringGranularData\0\u{1}saturationAvgPercentage\0\u{1}saturationMinimumPercentage\0\u{1}saturationMaximumPercentage\0\u{1}saturationGranularData\0")
 
   fileprivate class _StorageClass {
     var _dateTime: String = String()
@@ -3751,15 +3548,11 @@ extension SleepSummaryProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     var _saturationMaximumPercentage: Double = 0
     var _saturationGranularData: [SaturationGranularDataProto] = []
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -4072,11 +3865,9 @@ extension SleepSummaryProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   }
 }
 
-extension SleepSummariesProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension SleepSummariesProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "SleepSummariesProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "elements"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}elements\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -4104,12 +3895,9 @@ extension SleepSummariesProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension SleepSummaryResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension SleepSummaryResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "SleepSummaryResultProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "success"),
-    2: .same(proto: "failure"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}failure\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -4174,67 +3962,9 @@ extension SleepSummaryResultProto: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension PhysicalSummaryProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension PhysicalSummaryProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "PhysicalSummaryProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "sourceOfData"),
-    3: .same(proto: "wasTheUserUnderPhysicalActivity"),
-    4: .same(proto: "activeSeconds"),
-    5: .same(proto: "restSeconds"),
-    6: .same(proto: "lowIntensitySeconds"),
-    7: .same(proto: "moderateIntensitySeconds"),
-    8: .same(proto: "vigorousIntensitySeconds"),
-    9: .same(proto: "inactivitySeconds"),
-    10: .same(proto: "activityLevelGranularData"),
-    11: .same(proto: "continuousInactivePeriods"),
-    12: .same(proto: "caloriesNetIntakeKcal"),
-    13: .same(proto: "caloriesExpenditureKcal"),
-    14: .same(proto: "caloriesNetActiveKcal"),
-    15: .same(proto: "caloriesBasalMetabolicRateKcal"),
-    16: .same(proto: "steps"),
-    17: .same(proto: "stepsGranularData"),
-    18: .same(proto: "activeSteps"),
-    19: .same(proto: "activeStepsGranularData"),
-    20: .same(proto: "walkedDistanceMeters"),
-    21: .same(proto: "traveledDistanceMeters"),
-    22: .same(proto: "traveledDistanceGranularData"),
-    23: .same(proto: "floorsClimbed"),
-    24: .same(proto: "floorsClimbedGranularData"),
-    25: .same(proto: "elevationAvgAltitudeMeters"),
-    26: .same(proto: "elevationMinimumAltitudeMeters"),
-    27: .same(proto: "elevationMaximumAltitudeMeters"),
-    28: .same(proto: "elevationLossActualAltitudeMeters"),
-    29: .same(proto: "elevationGainActualAltitudeMeters"),
-    30: .same(proto: "elevationPlannedGainMeters"),
-    31: .same(proto: "elevationGranularData"),
-    32: .same(proto: "swimmingNumStrokes"),
-    33: .same(proto: "swimmingNumLaps"),
-    34: .same(proto: "swimmingPoolLengthMeters"),
-    35: .same(proto: "swimmingTotalDistanceMeters"),
-    36: .same(proto: "swimmingDistanceGranularData"),
-    37: .same(proto: "hrMaximumBpm"),
-    38: .same(proto: "hrMinimumBpm"),
-    39: .same(proto: "hrAvgBpm"),
-    40: .same(proto: "hrRestingBpm"),
-    41: .same(proto: "hrGranularData"),
-    42: .same(proto: "hrvAvgRmssd"),
-    43: .same(proto: "hrvAvgSdnn"),
-    44: .same(proto: "hrvSdnnGranularData"),
-    45: .same(proto: "hrvRmssdGranularData"),
-    46: .same(proto: "saturationAvgPercentage"),
-    47: .same(proto: "saturationGranularData"),
-    48: .same(proto: "vo2MaxMlPerMinPerKg"),
-    49: .same(proto: "vo2GranularData"),
-    50: .same(proto: "stressAtRestDurationSeconds"),
-    51: .same(proto: "stressDurationSeconds"),
-    52: .same(proto: "lowStressDurationSeconds"),
-    53: .same(proto: "mediumStressDurationSeconds"),
-    54: .same(proto: "highStressDurationSeconds"),
-    55: .same(proto: "stressGranularData"),
-    56: .same(proto: "stressAvgLevel"),
-    57: .same(proto: "stressMaximumLevel"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}sourceOfData\0\u{1}wasTheUserUnderPhysicalActivity\0\u{1}activeSeconds\0\u{1}restSeconds\0\u{1}lowIntensitySeconds\0\u{1}moderateIntensitySeconds\0\u{1}vigorousIntensitySeconds\0\u{1}inactivitySeconds\0\u{1}activityLevelGranularData\0\u{1}continuousInactivePeriods\0\u{1}caloriesNetIntakeKcal\0\u{1}caloriesExpenditureKcal\0\u{1}caloriesNetActiveKcal\0\u{1}caloriesBasalMetabolicRateKcal\0\u{1}steps\0\u{1}stepsGranularData\0\u{1}activeSteps\0\u{1}activeStepsGranularData\0\u{1}walkedDistanceMeters\0\u{1}traveledDistanceMeters\0\u{1}traveledDistanceGranularData\0\u{1}floorsClimbed\0\u{1}floorsClimbedGranularData\0\u{1}elevationAvgAltitudeMeters\0\u{1}elevationMinimumAltitudeMeters\0\u{1}elevationMaximumAltitudeMeters\0\u{1}elevationLossActualAltitudeMeters\0\u{1}elevationGainActualAltitudeMeters\0\u{1}elevationPlannedGainMeters\0\u{1}elevationGranularData\0\u{1}swimmingNumStrokes\0\u{1}swimmingNumLaps\0\u{1}swimmingPoolLengthMeters\0\u{1}swimmingTotalDistanceMeters\0\u{1}swimmingDistanceGranularData\0\u{1}hrMaximumBpm\0\u{1}hrMinimumBpm\0\u{1}hrAvgBpm\0\u{1}hrRestingBpm\0\u{1}hrGranularData\0\u{1}hrvAvgRmssd\0\u{1}hrvAvgSdnn\0\u{1}hrvSdnnGranularData\0\u{1}hrvRmssdGranularData\0\u{1}saturationAvgPercentage\0\u{1}saturationGranularData\0\u{1}vo2MaxMlPerMinPerKg\0\u{1}vo2GranularData\0\u{1}stressAtRestDurationSeconds\0\u{1}stressDurationSeconds\0\u{1}lowStressDurationSeconds\0\u{1}mediumStressDurationSeconds\0\u{1}highStressDurationSeconds\0\u{1}stressGranularData\0\u{1}stressAvgLevel\0\u{1}stressMaximumLevel\0")
 
   fileprivate class _StorageClass {
     var _dateTime: String = String()
@@ -4295,15 +4025,11 @@ extension PhysicalSummaryProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     var _stressAvgLevel: Int32 = 0
     var _stressMaximumLevel: Int32 = 0
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -4694,12 +4420,9 @@ extension PhysicalSummaryProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension PhysicalSummaryResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension PhysicalSummaryResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "PhysicalSummaryResultProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "success"),
-    2: .same(proto: "failure"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}failure\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -4764,74 +4487,9 @@ extension PhysicalSummaryResultProto: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension BodySummaryProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension BodySummaryProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "BodySummaryProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "sourceOfData"),
-    3: .same(proto: "wasTheUserUnderPhysicalActivity"),
-    4: .same(proto: "waistCircumferenceCm"),
-    5: .same(proto: "hipCircumferenceCm"),
-    6: .same(proto: "chestCircumferenceCm"),
-    7: .same(proto: "boneCompositionPercentage"),
-    8: .same(proto: "muscleCompositionPercentage"),
-    9: .same(proto: "waterCompositionPercentage"),
-    10: .same(proto: "weightKg"),
-    11: .same(proto: "heightCm"),
-    12: .same(proto: "bmi"),
-    13: .same(proto: "bloodGlucoseAvgMgPerDl"),
-    14: .same(proto: "bloodGlucoseGranularData"),
-    15: .same(proto: "bloodPressureAvg"),
-    16: .same(proto: "bloodPressureGranularData"),
-    17: .same(proto: "waterTotalConsumptionMl"),
-    18: .same(proto: "hydrationAmountGranularData"),
-    19: .same(proto: "hydrationLevelGranularData"),
-    20: .same(proto: "hrMaximumBpm"),
-    21: .same(proto: "hrMinimumBpm"),
-    22: .same(proto: "hrAvgBpm"),
-    23: .same(proto: "hrRestingBpm"),
-    24: .same(proto: "hrGranularData"),
-    25: .same(proto: "hrvAvgRmssd"),
-    26: .same(proto: "hrvAvgSdnn"),
-    27: .same(proto: "hrvSdnnGranularData"),
-    28: .same(proto: "hrvRmssdGranularData"),
-    29: .same(proto: "moodMinimumScale"),
-    30: .same(proto: "moodAvgScale"),
-    31: .same(proto: "moodMaximumScale"),
-    32: .same(proto: "moodGranularData"),
-    33: .same(proto: "moodDeltaScale"),
-    34: .same(proto: "foodIntake"),
-    35: .same(proto: "caloriesIntakeKcal"),
-    36: .same(proto: "proteinIntakeG"),
-    37: .same(proto: "sugarIntakeG"),
-    38: .same(proto: "fatIntakeG"),
-    39: .same(proto: "transFatIntakeG"),
-    40: .same(proto: "carbohydratesIntakeG"),
-    41: .same(proto: "fiberIntakeG"),
-    42: .same(proto: "alcoholIntakeG"),
-    43: .same(proto: "sodiumIntakeMg"),
-    44: .same(proto: "cholesterolIntakeMg"),
-    45: .same(proto: "saturationAvgPercentage"),
-    46: .same(proto: "saturationGranularData"),
-    47: .same(proto: "vo2MaxMlPerMinPerKg"),
-    48: .same(proto: "vo2GranularData"),
-    49: .same(proto: "temperatureMinimum"),
-    50: .same(proto: "temperatureAvg"),
-    51: .same(proto: "temperatureMaximum"),
-    52: .same(proto: "temperatureGranularData"),
-    53: .same(proto: "temperatureDelta"),
-    54: .same(proto: "lastUpdatedDatetime"),
-    55: .same(proto: "periodStartDate"),
-    56: .same(proto: "cycleDay"),
-    57: .same(proto: "cycleLengthDays"),
-    58: .same(proto: "predictedCycleLengthDays"),
-    59: .same(proto: "currentPhase"),
-    60: .same(proto: "lengthOfCurrentPhaseDays"),
-    61: .same(proto: "daysUntilNextPhase"),
-    62: .same(proto: "isAPredictedCycleValue"),
-    63: .same(proto: "isAPredictedCycleUnknown"),
-    64: .same(proto: "menstruationFlowGranularData"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}sourceOfData\0\u{1}wasTheUserUnderPhysicalActivity\0\u{1}waistCircumferenceCm\0\u{1}hipCircumferenceCm\0\u{1}chestCircumferenceCm\0\u{1}boneCompositionPercentage\0\u{1}muscleCompositionPercentage\0\u{1}waterCompositionPercentage\0\u{1}weightKg\0\u{1}heightCm\0\u{1}bmi\0\u{1}bloodGlucoseAvgMgPerDl\0\u{1}bloodGlucoseGranularData\0\u{1}bloodPressureAvg\0\u{1}bloodPressureGranularData\0\u{1}waterTotalConsumptionMl\0\u{1}hydrationAmountGranularData\0\u{1}hydrationLevelGranularData\0\u{1}hrMaximumBpm\0\u{1}hrMinimumBpm\0\u{1}hrAvgBpm\0\u{1}hrRestingBpm\0\u{1}hrGranularData\0\u{1}hrvAvgRmssd\0\u{1}hrvAvgSdnn\0\u{1}hrvSdnnGranularData\0\u{1}hrvRmssdGranularData\0\u{1}moodMinimumScale\0\u{1}moodAvgScale\0\u{1}moodMaximumScale\0\u{1}moodGranularData\0\u{1}moodDeltaScale\0\u{1}foodIntake\0\u{1}caloriesIntakeKcal\0\u{1}proteinIntakeG\0\u{1}sugarIntakeG\0\u{1}fatIntakeG\0\u{1}transFatIntakeG\0\u{1}carbohydratesIntakeG\0\u{1}fiberIntakeG\0\u{1}alcoholIntakeG\0\u{1}sodiumIntakeMg\0\u{1}cholesterolIntakeMg\0\u{1}saturationAvgPercentage\0\u{1}saturationGranularData\0\u{1}vo2MaxMlPerMinPerKg\0\u{1}vo2GranularData\0\u{1}temperatureMinimum\0\u{1}temperatureAvg\0\u{1}temperatureMaximum\0\u{1}temperatureGranularData\0\u{1}temperatureDelta\0\u{1}lastUpdatedDatetime\0\u{1}periodStartDate\0\u{1}cycleDay\0\u{1}cycleLengthDays\0\u{1}predictedCycleLengthDays\0\u{1}currentPhase\0\u{1}lengthOfCurrentPhaseDays\0\u{1}daysUntilNextPhase\0\u{1}isAPredictedCycleValue\0\u{1}isAPredictedCycleUnknown\0\u{1}menstruationFlowGranularData\0")
 
   fileprivate class _StorageClass {
     var _dateTime: String = String()
@@ -4898,15 +4556,11 @@ extension BodySummaryProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
     var _isApredictedCycle: BodySummaryProto.OneOf_IsApredictedCycle?
     var _menstruationFlowGranularData: [MenstruationFlowGranularDataProto] = []
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -5360,12 +5014,9 @@ extension BodySummaryProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
   }
 }
 
-extension BodySummaryResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension BodySummaryResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "BodySummaryResultProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "success"),
-    2: .same(proto: "failure"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}failure\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -5430,99 +5081,9 @@ extension BodySummaryResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension ActivityEventProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension ActivityEventProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "ActivityEventProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "sourceOfData"),
-    3: .same(proto: "wasTheUserUnderPhysicalActivity"),
-    4: .same(proto: "activityStartDateTime"),
-    5: .same(proto: "activityEndDateTime"),
-    6: .same(proto: "activityDurationSeconds"),
-    7: .same(proto: "activityTypeName"),
-    8: .same(proto: "activeSeconds"),
-    9: .same(proto: "restSeconds"),
-    10: .same(proto: "lowIntensitySeconds"),
-    11: .same(proto: "moderateIntensitySeconds"),
-    12: .same(proto: "vigorousIntensitySeconds"),
-    13: .same(proto: "inactivitySeconds"),
-    14: .same(proto: "activityLevelGranularData"),
-    15: .same(proto: "continuousInactivePeriods"),
-    16: .same(proto: "activityStrainLevel"),
-    17: .same(proto: "activityWorkKilojoules"),
-    18: .same(proto: "activityEnergyKilojoules"),
-    19: .same(proto: "activityEnergyPlannedKilojoules"),
-    20: .same(proto: "caloriesNetIntakeKcal"),
-    21: .same(proto: "caloriesExpenditureKcal"),
-    22: .same(proto: "caloriesNetActiveKcal"),
-    23: .same(proto: "caloriesBasalMetabolicRateKcal"),
-    24: .same(proto: "fatPercentageOfCalories"),
-    25: .same(proto: "carbohydratePercentageOfCalories"),
-    26: .same(proto: "proteinPercentageOfCalories"),
-    27: .same(proto: "steps"),
-    28: .same(proto: "stepsGranularData"),
-    29: .same(proto: "walkedDistanceMeters"),
-    30: .same(proto: "traveledDistanceMeters"),
-    31: .same(proto: "traveledDistanceGranularData"),
-    32: .same(proto: "floorsClimbed"),
-    33: .same(proto: "floorsClimbedGranularData"),
-    34: .same(proto: "elevationAvgAltitudeMeters"),
-    35: .same(proto: "elevationMinimumAltitudeMeters"),
-    36: .same(proto: "elevationMaximumAltitudeMeters"),
-    37: .same(proto: "elevationLossActualAltitudeMeters"),
-    38: .same(proto: "elevationGainActualAltitudeMeters"),
-    39: .same(proto: "elevationPlannedGainMeters"),
-    40: .same(proto: "elevationGranularData"),
-    41: .same(proto: "swimmingNumStrokes"),
-    42: .same(proto: "swimmingNumLaps"),
-    43: .same(proto: "swimmingPoolLengthMeters"),
-    44: .same(proto: "swimmingTotalDistanceMeters"),
-    45: .same(proto: "swimmingDistanceGranularData"),
-    46: .same(proto: "hrMaximumBpm"),
-    47: .same(proto: "hrMinimumBpm"),
-    48: .same(proto: "hrAvgBpm"),
-    49: .same(proto: "hrRestingBpm"),
-    50: .same(proto: "hrGranularData"),
-    51: .same(proto: "hrvAvgRmssd"),
-    52: .same(proto: "hrvAvgSdnn"),
-    53: .same(proto: "hrvSdnnGranularData"),
-    54: .same(proto: "hrvRmssdGranularData"),
-    55: .same(proto: "speedNormalizedMetersPerSecond"),
-    56: .same(proto: "speedAvgMetersPerSecond"),
-    57: .same(proto: "speedMaximumMetersPerSecond"),
-    58: .same(proto: "speedGranularData"),
-    59: .same(proto: "velocityAvg"),
-    60: .same(proto: "velocityMaximum"),
-    61: .same(proto: "paceAvgMinPerKm"),
-    62: .same(proto: "paceMaximumMinPerKm"),
-    63: .same(proto: "cadenceAvgRpm"),
-    64: .same(proto: "cadenceMaximumRpm"),
-    65: .same(proto: "cadenceGranularData"),
-    66: .same(proto: "torqueAvgNewtonMeters"),
-    67: .same(proto: "torqueMaximumNewtonMeters"),
-    68: .same(proto: "torqueGranularData"),
-    69: .same(proto: "lapGranularData"),
-    70: .same(proto: "saturationAvgPercentage"),
-    71: .same(proto: "saturationGranularData"),
-    72: .same(proto: "vo2MaxMlPerMinPerKg"),
-    73: .same(proto: "vo2GranularData"),
-    74: .same(proto: "positionStart"),
-    75: .same(proto: "positionCentroid"),
-    76: .same(proto: "positionEnd"),
-    77: .same(proto: "positionGranularData"),
-    78: .same(proto: "positionPolylineMapDataSummary"),
-    79: .same(proto: "powerAvgWatts"),
-    80: .same(proto: "powerMaximumWatts"),
-    81: .same(proto: "powerGranularData"),
-    82: .same(proto: "stressAtRestDurationSeconds"),
-    83: .same(proto: "stressDurationSeconds"),
-    84: .same(proto: "lowStressDurationSeconds"),
-    85: .same(proto: "mediumStressDurationSeconds"),
-    86: .same(proto: "highStressDurationSeconds"),
-    87: .same(proto: "tssGranularData"),
-    88: .same(proto: "stressAvgLevel"),
-    89: .same(proto: "stressMaximumLevel"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}sourceOfData\0\u{1}wasTheUserUnderPhysicalActivity\0\u{1}activityStartDateTime\0\u{1}activityEndDateTime\0\u{1}activityDurationSeconds\0\u{1}activityTypeName\0\u{1}activeSeconds\0\u{1}restSeconds\0\u{1}lowIntensitySeconds\0\u{1}moderateIntensitySeconds\0\u{1}vigorousIntensitySeconds\0\u{1}inactivitySeconds\0\u{1}activityLevelGranularData\0\u{1}continuousInactivePeriods\0\u{1}activityStrainLevel\0\u{1}activityWorkKilojoules\0\u{1}activityEnergyKilojoules\0\u{1}activityEnergyPlannedKilojoules\0\u{1}caloriesNetIntakeKcal\0\u{1}caloriesExpenditureKcal\0\u{1}caloriesNetActiveKcal\0\u{1}caloriesBasalMetabolicRateKcal\0\u{1}fatPercentageOfCalories\0\u{1}carbohydratePercentageOfCalories\0\u{1}proteinPercentageOfCalories\0\u{1}steps\0\u{1}stepsGranularData\0\u{1}walkedDistanceMeters\0\u{1}traveledDistanceMeters\0\u{1}traveledDistanceGranularData\0\u{1}floorsClimbed\0\u{1}floorsClimbedGranularData\0\u{1}elevationAvgAltitudeMeters\0\u{1}elevationMinimumAltitudeMeters\0\u{1}elevationMaximumAltitudeMeters\0\u{1}elevationLossActualAltitudeMeters\0\u{1}elevationGainActualAltitudeMeters\0\u{1}elevationPlannedGainMeters\0\u{1}elevationGranularData\0\u{1}swimmingNumStrokes\0\u{1}swimmingNumLaps\0\u{1}swimmingPoolLengthMeters\0\u{1}swimmingTotalDistanceMeters\0\u{1}swimmingDistanceGranularData\0\u{1}hrMaximumBpm\0\u{1}hrMinimumBpm\0\u{1}hrAvgBpm\0\u{1}hrRestingBpm\0\u{1}hrGranularData\0\u{1}hrvAvgRmssd\0\u{1}hrvAvgSdnn\0\u{1}hrvSdnnGranularData\0\u{1}hrvRmssdGranularData\0\u{1}speedNormalizedMetersPerSecond\0\u{1}speedAvgMetersPerSecond\0\u{1}speedMaximumMetersPerSecond\0\u{1}speedGranularData\0\u{1}velocityAvg\0\u{1}velocityMaximum\0\u{1}paceAvgMinPerKm\0\u{1}paceMaximumMinPerKm\0\u{1}cadenceAvgRpm\0\u{1}cadenceMaximumRpm\0\u{1}cadenceGranularData\0\u{1}torqueAvgNewtonMeters\0\u{1}torqueMaximumNewtonMeters\0\u{1}torqueGranularData\0\u{1}lapGranularData\0\u{1}saturationAvgPercentage\0\u{1}saturationGranularData\0\u{1}vo2MaxMlPerMinPerKg\0\u{1}vo2GranularData\0\u{1}positionStart\0\u{1}positionCentroid\0\u{1}positionEnd\0\u{1}positionGranularData\0\u{1}positionPolylineMapDataSummary\0\u{1}powerAvgWatts\0\u{1}powerMaximumWatts\0\u{1}powerGranularData\0\u{1}stressAtRestDurationSeconds\0\u{1}stressDurationSeconds\0\u{1}lowStressDurationSeconds\0\u{1}mediumStressDurationSeconds\0\u{1}highStressDurationSeconds\0\u{1}tssGranularData\0\u{1}stressAvgLevel\0\u{1}stressMaximumLevel\0")
 
   fileprivate class _StorageClass {
     var _dateTime: String = String()
@@ -5615,15 +5176,11 @@ extension ActivityEventProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     var _stressAvgLevel: Int32 = 0
     var _stressMaximumLevel: Int32 = 0
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -6206,11 +5763,9 @@ extension ActivityEventProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   }
 }
 
-extension ActivityEventsProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension ActivityEventsProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "ActivityEventsProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "elements"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}elements\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6238,12 +5793,9 @@ extension ActivityEventsProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension ActivityEventResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension ActivityEventResultProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "ActivityEventResultProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "success"),
-    2: .same(proto: "failure"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}success\0\u{1}failure\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6308,13 +5860,9 @@ extension ActivityEventResultProto: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension ActiveStepsGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension ActiveStepsGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "ActiveStepsGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "intervalDurationSeconds"),
-    3: .same(proto: "activeSteps"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}intervalDurationSeconds\0\u{1}activeSteps\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6352,12 +5900,9 @@ extension ActiveStepsGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension ActivityLevelGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension ActivityLevelGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "ActivityLevelGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "activityLevel"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}activityLevel\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6390,12 +5935,9 @@ extension ActivityLevelGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension BloodGlucoseGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension BloodGlucoseGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "BloodGlucoseGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "bloodGlucoseMgPerDl"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}bloodGlucoseMgPerDl\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6428,13 +5970,9 @@ extension BloodGlucoseGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension BloodPressureGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension BloodPressureGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "BloodPressureGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "systolicMmHg"),
-    3: .same(proto: "diastolicMmHg"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}systolicMmHg\0\u{1}diastolicMmHg\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6472,12 +6010,9 @@ extension BloodPressureGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension BreathingGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension BreathingGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "BreathingGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "breathsPerMin"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}breathsPerMin\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6510,13 +6045,9 @@ extension BreathingGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension CadenceGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension CadenceGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "CadenceGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "intervalDurationSeconds"),
-    3: .same(proto: "cadenceRpm"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}intervalDurationSeconds\0\u{1}cadenceRpm\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6554,13 +6085,9 @@ extension CadenceGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension ElevationGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension ElevationGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "ElevationGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "intervalDurationSeconds"),
-    3: .same(proto: "elevationChangeMeters"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}intervalDurationSeconds\0\u{1}elevationChangeMeters\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6598,13 +6125,9 @@ extension ElevationGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension FloorsClimbedGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension FloorsClimbedGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "FloorsClimbedGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "intervalDurationSeconds"),
-    3: .same(proto: "floorsClimbed"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}intervalDurationSeconds\0\u{1}floorsClimbed\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6642,12 +6165,9 @@ extension FloorsClimbedGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension HrGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension HrGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "HrGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "hrBpm"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}hrBpm\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6680,12 +6200,9 @@ extension HrGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension HrvSdnnGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension HrvSdnnGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "HrvSdnnGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "hrvSdnn"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}hrvSdnn\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6718,12 +6235,9 @@ extension HrvSdnnGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension MenstruationFlowGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension MenstruationFlowGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "MenstruationFlowGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "flowMl"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}flowMl\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6756,13 +6270,9 @@ extension MenstruationFlowGranularDataProto: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension MoodGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension MoodGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "MoodGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "intervalDurationSeconds"),
-    3: .same(proto: "moodScale"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}intervalDurationSeconds\0\u{1}moodScale\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6800,13 +6310,9 @@ extension MoodGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension LapGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension LapGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "LapGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "intervalDurationSeconds"),
-    3: .same(proto: "laps"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}intervalDurationSeconds\0\u{1}laps\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6844,13 +6350,9 @@ extension LapGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension PowerGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension PowerGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "PowerGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "intervalDurationSeconds"),
-    3: .same(proto: "powerWatts"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}intervalDurationSeconds\0\u{1}powerWatts\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6888,14 +6390,9 @@ extension PowerGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension PositionGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension PositionGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "PositionGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "intervalDurationSeconds"),
-    3: .same(proto: "latDeg"),
-    4: .same(proto: "lngDeg"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}intervalDurationSeconds\0\u{1}latDeg\0\u{1}lngDeg\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6938,13 +6435,9 @@ extension PositionGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension HydrationAmountGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension HydrationAmountGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "HydrationAmountGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "intervalDurationSeconds"),
-    3: .same(proto: "hydrationAmountMl"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}intervalDurationSeconds\0\u{1}hydrationAmountMl\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6982,12 +6475,9 @@ extension HydrationAmountGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension SaturationGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension SaturationGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "SaturationGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "saturationPercentage"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}saturationPercentage\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -7020,13 +6510,9 @@ extension SaturationGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension HydrationLevelGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension HydrationLevelGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "HydrationLevelGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "intervalDurationSeconds"),
-    3: .same(proto: "hydrationLevelPercentage"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}intervalDurationSeconds\0\u{1}hydrationLevelPercentage\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -7064,12 +6550,9 @@ extension HydrationLevelGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension HrvRmssdGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension HrvRmssdGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "HrvRmssdGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "hrvRmssd"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}hrvRmssd\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -7102,13 +6585,9 @@ extension HrvRmssdGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension SnoringGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension SnoringGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "SnoringGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "intervalDurationSeconds"),
-    3: .same(proto: "snoringEventsCount"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}intervalDurationSeconds\0\u{1}snoringEventsCount\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -7146,13 +6625,9 @@ extension SnoringGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension SpeedGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension SpeedGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "SpeedGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "intervalDurationSeconds"),
-    3: .same(proto: "speedMetersPerSecond"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}intervalDurationSeconds\0\u{1}speedMetersPerSecond\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -7190,13 +6665,9 @@ extension SpeedGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension StepsGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension StepsGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "StepsGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "intervalDurationSeconds"),
-    3: .same(proto: "steps"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}intervalDurationSeconds\0\u{1}steps\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -7234,12 +6705,9 @@ extension StepsGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension StressGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension StressGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "StressGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "stressScore"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}stressScore\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -7272,13 +6740,9 @@ extension StressGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension SwimmingDistanceGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension SwimmingDistanceGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "SwimmingDistanceGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "intervalDurationSeconds"),
-    3: .same(proto: "swimmingDistanceMeters"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}intervalDurationSeconds\0\u{1}swimmingDistanceMeters\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -7316,13 +6780,9 @@ extension SwimmingDistanceGranularDataProto: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TemperatureGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TemperatureGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "TemperatureGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "temperatureCelsius"),
-    3: .same(proto: "measurementType"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}temperatureCelsius\0\u{1}measurementType\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -7360,13 +6820,9 @@ extension TemperatureGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TorqueGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TorqueGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "TorqueGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "intervalDurationSeconds"),
-    3: .same(proto: "torqueNewtonMeters"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}intervalDurationSeconds\0\u{1}torqueNewtonMeters\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -7404,13 +6860,9 @@ extension TorqueGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TraveledDistanceGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TraveledDistanceGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "TraveledDistanceGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "intervalDurationSeconds"),
-    3: .same(proto: "traveledDistanceMeters"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}intervalDurationSeconds\0\u{1}traveledDistanceMeters\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -7448,13 +6900,9 @@ extension TraveledDistanceGranularDataProto: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TssGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TssGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "TssGranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "intervalDurationSeconds"),
-    3: .same(proto: "tssScore"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}intervalDurationSeconds\0\u{1}tssScore\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -7492,12 +6940,9 @@ extension TssGranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension Vo2GranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension Vo2GranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "Vo2GranularDataProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "dateTime"),
-    2: .same(proto: "vo2MlPerMinPerKg"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}dateTime\0\u{1}vo2MlPerMinPerKg\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -7530,12 +6975,9 @@ extension Vo2GranularDataProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension BloodPressureObjectProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension BloodPressureObjectProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "BloodPressureObjectProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "systolicMmHg"),
-    2: .same(proto: "diastolicMmHg"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}systolicMmHg\0\u{1}diastolicMmHg\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -7568,12 +7010,9 @@ extension BloodPressureObjectProto: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension PositionObjectProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension PositionObjectProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "PositionObjectProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "latDeg"),
-    2: .same(proto: "lngDeg"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}latDeg\0\u{1}lngDeg\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -7606,12 +7045,9 @@ extension PositionObjectProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension TemperatureObjectProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TemperatureObjectProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "TemperatureObjectProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "temperatureCelsius"),
-    2: .same(proto: "measurementType"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}temperatureCelsius\0\u{1}measurementType\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -7644,12 +7080,9 @@ extension TemperatureObjectProto: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension VelocityObjectProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension VelocityObjectProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   static let protoMessageName: String = "VelocityObjectProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "speedMetersPerSecond"),
-    2: .same(proto: "direction"),
-  ]
+  static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}speedMetersPerSecond\0\u{1}direction\0")
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
