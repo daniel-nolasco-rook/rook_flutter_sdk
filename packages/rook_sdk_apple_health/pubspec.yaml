@@ -1,6 +1,6 @@
 name: rook_sdk_apple_health
 description: This package enables apps to extract and upload data from Apple Health.
-version: 4.2.1
+version: 4.2.2
 homepage: 'https://docs.tryrook.io/'
 platforms:
   ios:
@@ -13,7 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ">=2.0.0 <3.0.0"
-  protobuf: ">=4.1.0 <5.0.0"
+  protobuf: ">=6.0.0 <7.0.0"
   fixnum: "^1.0.0"
   rook_sdk_core: "^4.1.1"
 
