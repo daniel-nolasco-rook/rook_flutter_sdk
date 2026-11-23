@@ -428,14 +428,14 @@ packages:
       path: "packages/rook_sdk_health_connect"
       relative: true
     source: path
-    version: "4.2.2"
+    version: "4.2.3"
   rook_sdk_samsung_health:
     dependency: "direct main"
     description:
       path: "packages/rook_sdk_samsung_health"
       relative: true
     source: path
-    version: "4.2.2"
+    version: "4.2.3"
   shared_preferences:
     dependency: "direct main"
     description:
